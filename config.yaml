@@ -1,0 +1,21 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: true
+  minversion: 0.29.5
+dotfiles:
+  f_zshrc:
+    src: .zshrc
+    dst: ~/.zshrc
+    link: link 
+  f_zprofile:
+    src: .zprofile
+    dst: ~/.zprofile
+    link: link
+profiles:
+  terminator:
+    dotfiles:
+    - f_zshrc
+    - f_zprofile
