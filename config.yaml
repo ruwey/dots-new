@@ -6,16 +6,16 @@ config:
   keepdot: true
   minversion: 0.29.5
 dotfiles:
-  f_zshrc:
-    src: .zshrc
-    dst: ~/.zshrc
-    link: link 
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
     link: link
+  f_zshrc:
+    src: .zshrc
+    dst: ~/.zshrc
+    link: link
 profiles:
   terminator:
     dotfiles:
-    - f_zshrc
     - f_zprofile
+    - f_zshrc
