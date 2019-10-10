@@ -90,7 +90,8 @@ alias r='ranger'
 alias ll='ls -la'
 
 # Dotdrop
-alias dotdrop='~/.dotdrop/dotdrop.sh --cfg=~/.dotdrop/config.yaml'
+alias dotdrop="DOTDROP_CONFIG=~/.dotdrop/config.yaml ~/.dotdrop/dotdrop.sh"
+
 
 # }}}
 
