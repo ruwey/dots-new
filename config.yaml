@@ -1,3 +1,5 @@
+
+# Config {{{
 config:
   backup: true
   banner: false
@@ -5,6 +7,14 @@ config:
   dotpath: dotfiles
   keepdot: true
   minversion: 0.29.5
+# }}}
+
+# Actions {{{
+actions:
+
+#}}}
+
+# Dotfiles {{{
 dotfiles:
   d_nvim:
     src: .config/nvim
@@ -26,6 +36,10 @@ dotfiles:
     src: .zshrc
     dst: ~/.zshrc
     link: link
+
+#}}}
+
+# Profiles {{{
 profiles:
   terminator:
     dotfiles:
@@ -34,3 +48,5 @@ profiles:
     - f_compton.conf
     - f_zprofile
     - f_zshrc
+#}}}
+# vim:tabstop=2:shiftwidth=2
