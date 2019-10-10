@@ -10,6 +10,10 @@ dotfiles:
     src: .config/nvim
     dst: ~/.config/nvim
     link: link_children
+  d_pictures:
+    src: Pictures
+    dst: ~/Pictures
+    link: link
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -22,5 +26,6 @@ profiles:
   terminator:
     dotfiles:
     - d_nvim
+    - d_pictures
     - f_zprofile
     - f_zshrc
