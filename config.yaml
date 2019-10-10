@@ -14,6 +14,10 @@ dotfiles:
     src: Pictures
     dst: ~/Pictures
     link: link
+  f_compton.conf:
+    src: .config/compton.conf
+    dst: ~/.config/compton.conf
+    link: link
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -27,5 +31,6 @@ profiles:
     dotfiles:
     - d_nvim
     - d_pictures
+    - f_compton.conf
     - f_zprofile
     - f_zshrc
