@@ -92,6 +92,8 @@ alias ll='ls -la'
 # Dotdrop
 alias dotdrop="DOTDROP_CONFIG=~/.dotdrop/config.yaml ~/.dotdrop/dotdrop.sh"
 
+# Alias c for clear
+alias c=clear
 
 # }}}
 
