@@ -6,6 +6,10 @@ config:
   keepdot: true
   minversion: 0.29.5
 dotfiles:
+  d_nvim:
+    src: .config/nvim
+    dst: ~/.config/nvim
+    link: link_children
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -17,5 +21,6 @@ dotfiles:
 profiles:
   terminator:
     dotfiles:
+    - d_nvim
     - f_zprofile
     - f_zshrc

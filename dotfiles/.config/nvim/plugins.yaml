@@ -1,0 +1,18 @@
+# Ui for dein
+- wsdjeg/dein-ui.vim:
+        on_cmd: DeinUpdate
+
+- mhinz/vim-startify:
+        on_cmd: Startify
+
+- itchyny/lightline.vim:
+
+- mboughaba/i3config.vim:
+
+- scrooloose/nerdcommenter:
+
+- neoclide/coc.nvim:
+        merge: 0
+        build: yarn install --frozen-lockfile
+
+- ap/vim-css-color:
