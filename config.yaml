@@ -48,5 +48,10 @@ profiles:
     - f_compton.conf
     - f_zprofile
     - f_zshrc
+  BigBrother:
+    dotfiles:
+    - d_pictures
+    - f_zprofile
+    - f_zshrc
 #}}}
 # vim:tabstop=2:shiftwidth=2:foldmethod=marker
