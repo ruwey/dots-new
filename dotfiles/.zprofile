@@ -7,8 +7,12 @@ export EDITOR=nvim
 
 # Set terminal
 export TERM=termite
+
 # Add scripts to path
 export PATH=$HOME/.scripts:$PATH
+
+# Set dircolors
+eval $(dircolors ~/.dir_colors)
 
 # Start ssh-agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
