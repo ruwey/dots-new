@@ -52,11 +52,13 @@ zplugin light zsh-users/zsh-autosuggestions
 
 # Configuration {{{ 
 # Set color scheme from wpgtk
-(cat $HOME/.config/wpg/sequences &)
+#(cat $HOME/.config/wpg/sequences &)
 
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
+eval $(dircolors ~/.dir_colors)
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
@@ -88,6 +90,9 @@ alias r='ranger'
 
 # Long list
 alias ll='ls -la'
+
+# LS with color
+alias ls='ls --color'
 
 # Dotdrop
 alias dotdrop="DOTDROP_CONFIG=~/.dotdrop/config.yaml ~/.dotdrop/dotdrop.sh"
