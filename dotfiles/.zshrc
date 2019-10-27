@@ -29,7 +29,7 @@ autoload -Uz _zplugin
 # }}}
 
 # Prompt
-zplugin light romkatv/powerlevel10k
+zplugin ice depth=1; zplugin light romkatv/powerlevel10k
 
 # For the selection menu when looking at autocomplete
 #zplugin ice wait'!1'
@@ -72,6 +72,53 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# PowerLine 10K (Prompt) {{{
+# Don't give me annoying config dialog
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+# Mode
+#POWERLEVEL9K_MODE='nerdfont-complete'
+
+# Choose elements
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vi_mode)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+
+# Vcs
+# Icons
+POWERLEVEL9K_VCS_BRANCH_ICON=' '
+POWERLEVEL9K_VCS_COMMIT_ICON=' '
+POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=' '
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=' '
+POWERLEVEL9K_VCS_GIT_GITLAB_ICON=' '
+POWERLEVEL9K_VCS_GIT_ICON=' '
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=' '
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=' '
+POWERLEVEL9K_VCS_REMOTE_BRANCH_ICON=' '
+POWERLEVEL9K_VCS_STAGED_ICON=' '
+POWERLEVEL9K_VCS_STASH_ICON=' '
+POWERLEVEL9K_VCS_UNSTAGED_ICON=' '
+POWERLEVEL9K_VCS_UNTRACKED_ICON=' '
+
+# Vi Mode
+POWERLEVEL9K_VI_MODE_BACKGROUND='red'
+POWERLEVEL9K_VI_MODE_FOREGROUND='black'
+POWERLEVEL9K_VI_INSERT_MODE_STRING='I'
+POWERLEVEL9K_VI_COMMAND_MODE_STRING='N'
+
+# Status
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND='yellow'
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND='black'
+
+# Dir
+POWERLEVEL9K_DIR_BACKGROUND='black'
+POWERLEVEL9K_DIR_FOREGROUND='green'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+
+# OS Icon
+POWERLEVEL9K_LINUX_ARCH_ICON=' '
+POWERLEVEL9K_OS_ICON_BACKGROUND='red'
+POWERLEVEL9K_OS_ICON_FOREGROUND='black'
+#}}}
 # }}}
 
 # Aliases {{{
