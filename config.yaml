@@ -24,6 +24,10 @@ dotfiles:
     src: Pictures
     dst: ~/Pictures
     link: link
+  d_scripts:
+    src: .scripts
+    dst: ~/.scripts
+    link: link_children
   d_spotifyd:
     src: .config/spotifyd
     dst: ~/.config/spotifyd
@@ -49,6 +53,7 @@ profiles:
     dotfiles:
     - d_nvim
     - d_pictures
+    - d_scripts
     - d_spotifyd
     - f_compton.conf
     - f_zprofile

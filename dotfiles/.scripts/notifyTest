@@ -1,0 +1,5 @@
+#!/bin/bash
+# Test notification daemon
+notify-send -u low Test low
+notify-send -u normal Test normal
+notify-send -u critical Test critical

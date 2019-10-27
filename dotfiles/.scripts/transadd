@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pgrep -x transmission-da || transmission-daemon
+
+transmission-remote -a "$@" && dunstify "🔽 Torrent added."
