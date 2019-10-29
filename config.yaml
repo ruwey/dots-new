@@ -61,6 +61,8 @@ profiles:
   BigBrother:
     dotfiles:
     - d_pictures
+    - d_scripts
+    - d_spotifyd
     - f_zprofile
     - f_zshrc
 #}}}
