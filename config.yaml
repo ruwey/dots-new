@@ -65,6 +65,7 @@ profiles:
     - f_zshrc
   BigBrother:
     dotfiles:
+    - d_nvim
     - d_pictures
     - d_scripts
     - d_spotifyd

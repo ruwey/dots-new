@@ -1,18 +1,41 @@
-# Ui for dein
-- wsdjeg/dein-ui.vim:
-        on_cmd: DeinUpdate
+# ruwey
+# gd@ruwey.com 
 
-- mhinz/vim-startify:
-        on_cmd: Startify
+# Startup plugins {{{
+- repo: neoclide/coc.nvim
+  merge: 0
+  rev: release
+- repo: itchyny/lightline.vim
+  #}}}
 
-- itchyny/lightline.vim:
+# Lazyloaded {{{
 
-- mboughaba/i3config.vim:
+# Ui {{{
+- repo: mhinz/vim-startify
+  on_cmd:
+    - Startify
+    - SClose
+    - SDelete
+    - SLoad
+    - SSave
+- repo: wsdjeg/dein-ui.vim
+  on_cmd: DeinUpdate
+#}}}
 
-- scrooloose/nerdcommenter:
+# Syntax {{{
+- repo: kovetskiy/sxhkd-vim
+  on_ft: sxhkd
+- repo: nvie/vim-ini
+  on_ft: dosini
+#}}}
 
-- neoclide/coc.nvim:
-        merge: 0
-        build: yarn install --frozen-lockfile
+# File Manager {{{
+- repo: Shougo/defx.nvim
+  on_cmd: Defx
+#}}}
 
-- ap/vim-css-color:
+# }}}
+
+- repo: arcticicestudio/nord-vim
+
+# vim:tabstop=2:shiftwidth=2:foldmethod=marker
