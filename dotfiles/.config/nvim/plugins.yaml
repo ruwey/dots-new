@@ -6,6 +6,9 @@
   merge: 0
   rev: release
 - repo: itchyny/lightline.vim
+- repo: honza/vim-snippets
+  depends: coc.nvim
+- repo: arcticicestudio/nord-vim
   #}}}
 
 # Lazyloaded {{{
@@ -35,7 +38,5 @@
 #}}}
 
 # }}}
-
-- repo: arcticicestudio/nord-vim
 
 # vim:tabstop=2:shiftwidth=2:foldmethod=marker
