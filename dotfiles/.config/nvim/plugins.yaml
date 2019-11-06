@@ -37,7 +37,10 @@
   on_cmd: Defx
 #}}}
 
-- repo: tpope/vim-fugitive
+# Git {{{
+# }}}
+- repo: jreybert/vimagit
+  on_cmd: Magit
 # }}}
 
 # vim:tabstop=2:shiftwidth=2:foldmethod=marker
