@@ -41,7 +41,6 @@
 - repo: jreybert/vimagit
   on_cmd: Magit
 # }}}
-# }}}
 
 # }}}
 
