@@ -16,6 +16,10 @@ actions:
 
 # Dotfiles {{{
 dotfiles:
+  d_awesomewm:
+    src: .config/awesome
+    dst: ~/.config/awesome
+    link: link_children
   d_i3:
     src: .config/i3
     dst: ~/.config/i3
@@ -55,6 +59,7 @@ dotfiles:
 profiles:
   terminator:
     dotfiles:
+    - d_awesomewm
     - d_i3
     - d_nvim
     - d_pictures
