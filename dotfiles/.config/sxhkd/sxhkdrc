@@ -1,0 +1,52 @@
+###############################################################
+#  ██      ██            ██   ██                              #
+# ░██     ░██           ░██  ░██              ██   ██         #
+# ░██     ░██  ██████  ██████░██  ██  █████  ░░██ ██   ██████ #
+# ░██████████ ██░░░░██░░░██░ ░██ ██  ██░░░██  ░░███   ██░░░░  #
+# ░██░░░░░░██░██   ░██  ░██  ░████  ░███████   ░██   ░░█████  #
+# ░██     ░██░██   ░██  ░██  ░██░██ ░██░░░░    ██     ░░░░░██ #
+# ░██     ░██░░██████   ░░██ ░██░░██░░██████  ██      ██████  #
+# ░░      ░░  ░░░░░░     ░░  ░░  ░░  ░░░░░░  ░░      ░░░░░░   #
+###############################################################
+
+# Media Keys {{{
+# Music Bindings
+
+XF86Audio{Prev,Next,Play}
+	playerctl {previous,next,play-pause}
+
+# Volume Bindings
+XF86Audio{Raise,Lower}Volume
+	chVol {+,-}5%
+
+# Smaller Increments
+shift + XF86Audio{Raise,Lower}Volume
+	chVol {+,-}2%
+
+# Mute
+XF86AudioMute
+	chVol mute
+
+#}}}
+
+# Start Programs {{{
+
+# Termite (terminal)
+alt + Return
+	termite
+
+# Rofi (App Launcher)
+alt + d
+	rofi -show run
+
+# Rofi in superuser
+alt + shift + d
+	rofi -run-command "gksu {cmd}" -show run
+
+# }}}
+
+# Reload sxhkd
+alt + ctrl + r
+	pkill -USR1 -x sxhkd
+
+# vim:foldmethod=marker

@@ -44,6 +44,10 @@ dotfiles:
     src: .config/compton.conf
     dst: ~/.config/compton.conf
     link: link
+  f_sxhkd:
+    src: .config/sxhkd/sxhkdrc
+    dst: ~/.config/sxhkd/sxhkdrc
+    link: link
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -74,6 +78,7 @@ profiles:
     - d_pictures
     - d_scripts
     - d_spotifyd
+    - f_sxhkd
     - f_zprofile
     - f_zshrc
 #}}}
