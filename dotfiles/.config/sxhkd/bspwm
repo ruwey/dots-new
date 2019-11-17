@@ -1,0 +1,90 @@
+# vim:ft=sxhkd:foldmethod=marker
+
+# General {{{
+
+# Exit/restart bspwm
+alt + shift + {e,r}
+	bspc {quit,wm -r}
+
+# Close/kill window
+alt + {_,ctrl + }shift + q
+	bspc node -{c,k}
+
+# Resize window
+# Expand window
+alt + {y,u,i,o}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract window
+alt + shift + {y,u,i,o}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+# Change window state
+alt + {e,w,shift + space,f}
+	bspc node -t {tiled,pseudo_tiled,\~floating,\~fullscreen}
+
+# Set which way to split
+alt + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# Cancel any preslection
+alt + Escape
+	bspc node -p cancel
+
+#}}}
+
+# Movement {{{
+
+# Move focus/current node
+alt + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Swap/move window
+alt + shift + h
+	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v -10 0; else; bspc node -s west; fi
+
+alt + shift + j
+	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v 0 10; else; bspc node -s south; fi
+
+alt + shift + k
+	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v 0 -10; else; bspc node -s north; fi
+
+alt + shift + l
+	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v 10 0; else; bspc node -s east; fi
+
+# Switch node with biggest node
+alt + g
+	bspc node -s biggest.local
+
+# Move between windows on current desktop
+alt + {n,p} 
+	bspc node -f {next,prev}.local
+
+# Focus on parent/brother
+alt + t
+	bspc node -f @parent
+
+# Rotate current tree
+alt + r
+	bspc node -R 90
+
+# Switch windows cyclic
+alt + shift + {n,p}
+	bspc node -s {next,prev}.local
+
+# Cycle through floating windows
+alt + space
+	bspc node -f next.floating.local
+
+# Focus a desktop
+alt + {1-9,0}
+	bspc desktop -f {1-9,10}
+
+# Move window to desktop
+alt + shift + {1-9,0}
+	bspc node -d {1-9,10}
+
+alt + ctrl + {1-9,0}
+	bspc node -d {1-9,10} --follow
+
+#}}}
