@@ -15,6 +15,10 @@ actions:
 #}}}
 
 # Dotfiles {{{
+# The first letter indicates the type:
+# b     binding
+# d     directory
+# f     file
 dotfiles:
   b_bspwm:
     src: .config/sxhkd/bspwm
@@ -44,6 +48,7 @@ dotfiles:
     src: .scripts
     dst: ~/.scripts
     link: link
+  # Spotify Daemon
   d_spotifyd:
     src: .config/spotifyd
     dst: ~/.config/spotifyd
@@ -52,6 +57,7 @@ dotfiles:
     src: .config/compton.conf
     dst: ~/.config/compton.conf
     link: link
+  # Generic keybindings
   f_sxhkd:
     src: .config/sxhkd/sxhkdrc
     dst: ~/.config/sxhkd/sxhkdrc
@@ -69,6 +75,7 @@ dotfiles:
 
 # Profiles {{{
 profiles:
+  # Desktop
   terminator:
     dotfiles:
     - d_awesomewm
@@ -80,6 +87,7 @@ profiles:
     - f_compton.conf
     - f_zprofile
     - f_zshrc
+  # Laptop
   BigBrother:
     dotfiles:
     - b_bspwm
