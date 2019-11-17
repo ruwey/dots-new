@@ -44,6 +44,10 @@ dotfiles:
     src: Pictures
     dst: ~/Pictures
     link: link
+  d_polybar:
+    src: .config/polybar
+    dst: ~/.config/polybar
+    link: link_children
   d_scripts:
     src: .scripts
     dst: ~/.scripts
@@ -94,6 +98,7 @@ profiles:
     - d_bspwm
     - d_nvim
     - d_pictures
+    - d_polybar
     - d_scripts
     - d_spotifyd
     - f_sxhkd

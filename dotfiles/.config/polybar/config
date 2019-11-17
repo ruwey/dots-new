@@ -1,0 +1,220 @@
+; Include a pre-generated colorscheme file
+include-file = $HOME/.config/polybar/colors
+
+; Bars {{{
+
+[bar/bottom]
+
+;monitor = eDP-1-1
+; Put the bar at the bottom of the screen
+bottom = true
+
+; Make sure the center modules are in the center of the monitor
+fixed-center = true
+
+; Dimensions
+width = 100%
+height = 25
+
+wm-restack = bspwm
+
+; Set Fonts
+font-0 = "Anonymous Pro:size=15;2"
+font-1 = "Siji:pixelsize=20;2"
+font-2 = "Unifont:size=11;2"
+
+dpi = 0
+
+; Set Colors
+background = ${colors.background}
+foreground = ${colors.foreground}
+border-color = ${colors.background}
+border-size = 4
+
+modules-left = bspwm pulseaudio
+modules-center = window
+modules-right = gmail arch-updates battery time
+
+module-margin-left = 2
+
+tray-position = right
+tray-background = ${colors.background-alt}
+tray-padding = 4
+
+; }}}
+
+; Modules {{{
+
+; Bspwm {{{
+[module/bspwm]
+type = internal/bspwm
+
+enable-scroll = false
+
+ws-icon-9 = 9;⑂
+
+; Normal
+label-empty = " %name% "
+label-empty-background = ${colors.background-alt}
+
+; Occupied
+label-occupied = " %name% "
+label-occupied-background = ${colors.background-alt}
+
+; Focused
+label-focused = " %name% "
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.foreground-alt}
+;}}}
+
+; Pulseaudio {{{
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = " <bar-volume> "
+format-volume-background = ${colors.background-alt}
+format-volume-prefix = "  "
+format-volume-prefix-background = ${colors.foreground-alt}
+format-volume-prefix-foreground = ${colors.background}
+
+format-muted = " <label-muted> "
+label-muted = "muted"
+format-muted-background = ${colors.background-alt}
+format-muted-prefix = "  "
+format-muted-prefix-background = ${colors.foreground-alt}
+format-muted-prefix-foreground = ${colors.background}
+
+bar-volume-width = 10
+bar-volume-fill = █
+bar-volume-indicator = █
+bar-volume-empty = -
+
+ramp-volume-0 = "  "
+
+; }}}
+
+; Window {{{
+[module/window]
+type = internal/xwindow
+
+; Set max character length to stop it from covering other elements
+label-maxlen = 100
+; }}}
+
+; Gmail {{{
+[module/gmail]
+type = custom/script
+
+exec = $HOME/.config/polybar/scripts/Gmail-Polybar/GmailPolybar -s
+
+tail = true
+
+format = <label>
+format-background = ${colors.background-alt}
+
+format-prefix = "  "
+format-prefix-background = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.background}
+
+label = " %output% "
+
+; }}}
+
+; Arch Updates {{{
+[module/arch-updates]
+type = custom/script
+
+exec = $HOME/.config/polybar/scripts/updates-arch-combined.sh
+interval = 600
+
+format = " <label> "
+format-background = ${colors.background-alt}
+
+format-prefix = "  "
+format-prefix-background = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.background}
+; }}}
+
+; Battery {{{
+[module/battery]
+type = internal/battery
+
+full-at = 100
+
+battery = BAT0
+adapter = AC
+
+; Charging
+format-charging = "<animation-charging><label-charging>"
+
+label-charging = " Charging %percentage%% "
+label-charging-background = ${colors.background-alt}
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+animation-charging-5 = "  "
+animation-charging-6 = "  "
+animation-charging-7 = "  "
+animation-charging-8 = "  "
+animation-charging-framerate = 500
+animation-charging-background = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.background}
+
+; Discharging
+format-discharging = "<ramp-capacity><label-discharging>"
+
+label-discharging = " Discharging %percentage%% "
+label-discharging-background = ${colors.background-alt}
+
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
+ramp-capacity-5 = "  "
+ramp-capacity-6 = "  "
+ramp-capacity-7 = "  "
+ramp-capacity-8 = "  "
+ramp-capacity-framerate = 500
+ramp-capacity-background = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.background}
+
+; Full
+format-full = " Battery Full "
+format-full-background = ${colors.background-alt}
+format-full-foreground = ${colors.foreground}
+
+format-full-prefix = "  "
+format-full-prefix-background = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.background}
+
+; }}}
+
+; Time {{{
+[module/time]
+type = internal/date
+
+time = %I:%M
+
+date = 
+
+format = "<label>"
+format-background = ${colors.background-alt}
+format-foreground = ${colors.foreground}
+
+label = " %time% "
+
+format-prefix = "  "
+format-prefix-background = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.background}
+
+format-suffix = "  "
+format-suffix-background = ${colors.background}
+
+; }}}
+
+; }}}
+; vim:ft=dosini:foldmethod=marker
