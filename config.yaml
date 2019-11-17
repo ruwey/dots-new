@@ -35,7 +35,7 @@ dotfiles:
   d_scripts:
     src: .scripts
     dst: ~/.scripts
-    link: link_children
+    link: link
   d_spotifyd:
     src: .config/spotifyd
     dst: ~/.config/spotifyd
