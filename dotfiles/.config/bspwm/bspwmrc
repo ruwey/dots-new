@@ -19,8 +19,10 @@ bspc config window_gap          12
 
 bspc config pointer_modifier     mod1
 bspc config split_ratio          0.52
+# Remove gaps and borders if only on window is open
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+bspc config single_monocle 	 true
 
 bspc rule -a Wpg state=floating
 bspc rule -a Steam desktop=5
