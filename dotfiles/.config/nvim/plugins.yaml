@@ -30,6 +30,12 @@
   on_ft: sxhkd
 - repo: nvie/vim-ini
   on_ft: dosini
+- repo: iamcco/markdown-preview.nvim
+  build: cd app & yarn install
+  on_ft:
+    - markdown
+    - pandoc.markdown
+    - rmd
 #}}}
 
 # File Manager {{{
