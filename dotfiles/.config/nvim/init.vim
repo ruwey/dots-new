@@ -69,6 +69,9 @@ au TermOpen * :setlocal norelativenumber
 " Folding
 set foldmethod=marker
 
+" View nfo file correctly
+autocmd BufReadPre *.nfo :setlocal fileencodings=cp437,utf-8
+
 "-- }}}
 
 "-- Key bindings {{{
