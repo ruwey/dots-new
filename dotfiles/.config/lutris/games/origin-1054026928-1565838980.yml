@@ -1,0 +1,19 @@
+game:
+  arch: win64
+  exe: drive_c/Program Files (x86)/Origin/Origin.exe
+  prefix: /mnt/bam/Games/Lutris/origin
+system:
+  env:
+    DXVK_CONFIG_FILE: /mnt/bam/Games/Lutris/origin/dxvk.conf
+    DXVK_HUD: '0'
+    PULSE_LATENCY_MSEC: '60'
+    STAGING_SHARED_MEMORY: '0'
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_PATH: /mnt/bam/Games/Lutris/origin/nv-shaders
+  exclude_processes: QtWebEngineProcess.exe ActivationUI.exe OriginWebHelperService.exe
+wine:
+  dxvk: true
+  overrides:
+    OriginThinSetupInternal.exe: disabled
+    nvapi,nvapi64: disabled
+  version: tkg-4.0-x86_64

@@ -1,0 +1,7 @@
+game:
+  appid: multimc
+  args: ''
+  exe: /usr/bin/multimc
+linux: {}
+system:
+  disable_runtime: true

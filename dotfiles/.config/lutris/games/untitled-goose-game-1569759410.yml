@@ -1,0 +1,8 @@
+game:
+  arch: win64
+  exe: /mnt/bam/Games/other/Untitled.Goose.Game/Untitled.Goose.Game/Untitled.exe
+system: {}
+wine:
+  Desktop: true
+  WineDesktop: 1920x1080
+  version: tkg-protonified-4.6-x86_64

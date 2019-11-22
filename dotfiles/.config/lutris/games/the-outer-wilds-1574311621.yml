@@ -1,0 +1,8 @@
+game:
+  exe: /home/ruwey/wine/OuterWorlds/drive_c/Program Files (x86)/The Outer Worlds/TheOuterWorlds.exe
+  prefix: ~/wine/OuterWorlds
+  working_dir: ~/wine/OuterWorlds/Work
+system: {}
+wine:
+  dxvk: true
+  version: lutris-nofshack-4.19-x86_64

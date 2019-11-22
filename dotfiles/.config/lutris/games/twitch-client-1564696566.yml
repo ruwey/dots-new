@@ -1,0 +1,6 @@
+game:
+  arch: win64
+  exe: /mnt/bam/Games/MultiMc/twitchWine/drive_c/users/ruwey/Application Data/Twitch/Bin/Twitch.exe
+  prefix: /mnt/bam/Games/MultiMc/twitchWine
+system: {}
+wine: {}

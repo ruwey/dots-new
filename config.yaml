@@ -36,6 +36,10 @@ dotfiles:
     src: .config/i3
     dst: ~/.config/i3
     link: link_children
+  d_lutris:
+    src: .config/lutris
+    dst: ~/.config/lutris
+    link: link_children
   d_nvim:
     src: .config/nvim
     dst: ~/.config/nvim
@@ -84,6 +88,7 @@ profiles:
     dotfiles:
     - d_awesomewm
     - d_i3
+    - d_lutris
     - d_nvim
     - d_pictures
     - d_scripts

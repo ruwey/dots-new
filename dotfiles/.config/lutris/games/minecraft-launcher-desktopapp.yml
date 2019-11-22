@@ -1,0 +1,7 @@
+game:
+  appid: minecraft-launcher
+  args: ''
+  exe: /opt/minecraft-launcher/minecraft-launcher
+linux: {}
+system:
+  disable_runtime: true
