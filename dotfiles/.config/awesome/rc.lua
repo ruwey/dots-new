@@ -237,50 +237,59 @@ root.buttons = {
 
 -- {{{ Key bindings
 globalkeys = {
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey, "Shift"   }, "/",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
-              {description = "go back", group = "tag"}),
 
+	-- Navigation
     awful.key({ modkey,           }, "j",
-        function ()
-            -- awful.client.focus.global_bydirection("left" )
-            awful.client.focus.byidx(1 )
-        end,
-        {description = "focus next by index", group = "client"}
+			  function() awful.client.focus.global_bydirection("down") end,
+        	  {description = "focus on client below", group = "client"}
     ),
     awful.key({ modkey,           }, "k",
-        function ()
-            awful.client.focus.byidx(-1)
-        end,
-        {description = "focus previous by index", group = "client"}
+        	  function () awful.client.focus.global_bydirection("up") end,
+        	  {description = "focus on client above", group = "client"}
     ),
+	awful.key({ modkey,			  }, "l",
+			  function() awful.client.focus.global_bydirection("right") end,
+			  {description = "focus on client to the right", group = "client"}
+	),
+	awful.key({ modkey,			  }, "h",
+			  function() awful.client.focus.global_bydirection("left") end,
+			  {description = "focus on client to the left", group = "client"}
+	),
+
+	-- Client movement
+	awful.key({ modkey, "Shift"	  }, "h",
+			  function() awful.client.swap.global_bydirection("left") end,
+			  {description = "swap with client to left", group = "client"}
+	),
+	awful.key({ modkey, "Shift"	  }, "j",
+			  function() awful.client.swap.global_bydirection("down") end,
+			  {description = "swap with client below", group = "client"}
+	),
+	awful.key({ modkey, "Shift"	  }, "k",
+			  function() awful.client.swap.global_bydirection("up") end,
+			  {description = "swap with client above", group = "client"}
+	),
+	awful.key({ modkey, "Shift"	  }, "l",
+			  function() awful.client.swap.global_bydirection("right") end,
+			  {description = "swap with client to right", group = "client"}
+	),
+
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
-              {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
-              {description = "swap with previous client by index", group = "client"}),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        {description = "go back", group = "client"}),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
@@ -290,6 +299,7 @@ globalkeys = {
     awful.key({ modkey, "Shift"   }, "c", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
+	--[[
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
@@ -302,6 +312,7 @@ globalkeys = {
               {description = "increase the number of columns", group = "layout"}),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
+	]]--
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
@@ -334,8 +345,10 @@ globalkeys = {
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    awful.key({ modkey }, "d", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
+	awful.key({ modkey, "Shift" }, "d", function() awful.spawn("launch") end,
+			  {description = "open game launcher", group = "launcher" }),
 	awful.key({ modkey }, "=", function() awful.spawn("chVol +5%") end,
 			  {description = "increase volume by 5 through command line", group = "media"}),
 	awful.key({ modkey }, "-", function() awful.spawn("chVol -5%") end,
