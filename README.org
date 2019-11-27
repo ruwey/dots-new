@@ -1,0 +1,6 @@
+#+TITLE: Dotfiles
+
+* Dotdrop
+These dotfiles are stored using dotdrop. This allows me to do cool thing such as deploy different dotfiles depending on the computer.
+
+* Setup
