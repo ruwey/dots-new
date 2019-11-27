@@ -7,3 +7,6 @@
 [submodule "dotfiles/.emacs/.emacs.d/evil"]
 	path = dotfiles/.emacs/.emacs.d/evil
 	url = https://github.com/emacs-evil/evil.git
+[submodule "dotfiles/.emacs/.emacs.d/org-bullets"]
+	path = dotfiles/.emacs/.emacs.d/org-bullets
+	url = https://github.com/sabof/org-bullets.git
