@@ -32,6 +32,10 @@ dotfiles:
     src: .config/bspwm
     dst: ~/.config/bspwm
     link: link_children
+  d_emacs:
+    src: .emacs
+    dst: ~/
+    link: link_children
   d_i3:
     src: .config/i3
     dst: ~/.config/i3
@@ -87,6 +91,7 @@ profiles:
   terminator:
     dotfiles:
     - d_awesomewm
+    - d_emacs
     - d_i3
     - d_lutris
     - d_nvim
