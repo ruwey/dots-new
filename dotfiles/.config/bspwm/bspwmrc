@@ -3,12 +3,11 @@
 $HOME/.config/bspwm/autostart.sh &
 sxhkd $HOME/.config/sxhkd/bspwm &
 
-mons="$(xrandr | grep " connected" | awk '{ print $1 }' | wc -l)"
-echo $mons
-if [ $mons -gt 1 ]
+mons=($(xrandr | grep " connected" | awk '{ print $1 }'))
+if [ ${#mons[*]} -gt 1 ]
 then
-	bspc monitor eDP-1-1 -d 1 2 3 4 5
-	bspc monitor HDMI-0 -d 6 7 8 9 10
+	bspc monitor ${mons[0]} -d 1 2 3 4 5
+	bspc monitor ${mons[1]} -d 6 7 8 9 10
 	xrandr --output HDMI-0 --right-of eDP-1-1
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
