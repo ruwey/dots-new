@@ -8,5 +8,5 @@ if [ $PLAYER_EVENT = "start" ] || [ $PLAYER_EVENT = "change" ]; then
 	title="$(echo "$metadata" | grep title | awk '{$1=$2=""; print substr($0,3)}')"
 	
 	#dunstify -r 181718 -u low "Playing $title" "by $artist"
-	dunstify -r 181718 -u low " Now Playing" "$artist - $title"
+	dunstify -r 181718 -u low " Now Playing" "$title - $artist"
 fi
