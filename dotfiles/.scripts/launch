@@ -18,7 +18,7 @@ launchers=(Lutris/Steam
 launcher="$(printf '%s\n' "${launchers[@]}" | $dmenu)"
 
 case $launcher in
-	"Lutris")
+	"Lutris/Steam")
 		lutrisLaunch;;
 	"RetroArch")
 		;;
