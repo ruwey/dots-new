@@ -18,6 +18,10 @@ call plugin#dein_init('/home/ruwey/.config/nvim/plugins.yaml')
 " General
 colorscheme nord
 
+" Set a working highlight for spellcheck
+hi clear SpellBad 
+hi SpellBad cterm=underline ctermfg=9
+
 " Lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'nord'
