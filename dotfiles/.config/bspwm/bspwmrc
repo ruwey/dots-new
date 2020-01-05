@@ -31,3 +31,13 @@ bspc rule -a firefox:Toolkit sticky=on
 # Make emacs tiled
 bspc rule -a Emacs state=tiled
 
+# Set up a scratchpad window
+bspc rule -a Scratch:\* \
+	state=floating \
+	hidden=on \
+	sticky=on
+
+# Set up terminal scratchpad 
+bspc rule -a Scratch:term \
+	rectangle=800x200+1116+840
+
