@@ -114,7 +114,6 @@ nnoremap <C-l> <C-w>l
 
 " Who want to press esc
 inoremap jk <esc>
-inoremap <esc> <nop>
 
 " Bind Copy to + register
 vnoremap <C-y> "+y
