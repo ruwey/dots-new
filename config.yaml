@@ -106,6 +106,7 @@ profiles:
     dotfiles:
     - b_bspwm
     - d_bspwm
+    - d_emacs
     - d_nvim
     - d_pictures
     - d_polybar
