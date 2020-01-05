@@ -147,6 +147,7 @@ alias dotdrop="DOTDROP_CONFIG=~/.dotdrop/config.yaml ~/.dotdrop/dotdrop.sh"
 # Alias c for clear
 alias c=clear
 
+alias scdl="youtube-dl --embed-thumbnail -f mp3 -i --add-metadata"
 # }}}
 
 # vim:foldmethod=marker

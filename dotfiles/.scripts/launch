@@ -1,9 +1,25 @@
 #!/bin/bash
 
-gamesList=$(lutris -lo)
+dmenu="rofi -dmenu"
 
-gameChoice=$(echo "$gamesList" | awk -F \| '{print $2$4 }'| rofi -dmenu -i | awk -F "  " '{print $1}')
+function lutrisLaunch {
+	gamesList=$(lutris -lo)
+	
+	gameChoice=$(echo "$gamesList" | awk -F \| '{print $2$4 }'| $dmenu -i | awk -F "  " '{print $1}')
+	
+	game=$(echo "$gamesList" | grep "$gameChoice" | awk -F \| '{print $3}' | sed "s/ //g")
+	
+	lutris lutris:rungame/$game
+}
 
-game=$(echo "$gamesList" | grep "$gameChoice" | awk -F \| '{print $3}' | sed "s/ //g")
+launchers=(Lutris/Steam
+	   RetroArch)
 
-lutris lutris:rungame/$game
+launcher="$(printf '%s\n' "${launchers[@]}" | $dmenu)"
+
+case $launcher in
+	"Lutris/Steam")
+		lutrisLaunch;;
+	"RetroArch")
+		;;
+esac

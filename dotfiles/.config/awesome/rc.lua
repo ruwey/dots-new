@@ -165,7 +165,20 @@ screen.connect_signal("request::wallpaper", function(s)
 end)
 
 screen.connect_signal("request::desktop_decoration", function(s)
-    -- Create 10 tags for each screen
+	s.testWidget = wibox.widget {
+		{
+			{
+				text = "Hello",
+				widget = wibox.widget.textbox
+			},
+			{
+				text = "World",
+				widget = wibox.widget.textbox
+			},
+			layout = wibox.layout.fixed.vertical
+		},
+	}
+	-- Create 10 tags for each screen
     for i = 1, 10 do
 		awful.tag.add(i, {
 			screen		= s,
@@ -235,6 +248,18 @@ root.buttons = {
 }
 -- }}}
 
+testWidget = wibox.widget {
+	{
+		text = 'Hello',
+		widget = wibox.widget.textbox
+	},
+	{
+		text = 'World',
+		widget = wibox.widget.textbox
+	},
+	layout = wibox.layout.fixed.vertical,
+}
+
 -- {{{ Key bindings
 globalkeys = {
     awful.key({ modkey, "Shift"   }, "/",      hotkeys_popup.show_help,
@@ -245,6 +270,19 @@ globalkeys = {
               {description = "view next", group = "tag"}),
 
 	-- Navigation
+	awful.key({ modkey,			  }, "b",
+			  function() 
+				awful.popup {
+					widget = testWidget,
+					border_color = '#00ff00',
+				    border_width = 5,
+				    placement    = awful.placement.under_mouse,
+				    shape        = gears.shape.rounded_rect,
+				    visible      = true,
+				}
+			  end,
+			  {discription = "test" 				, group = "client"}
+	),
     awful.key({ modkey,           }, "j",
 			  function() awful.client.focus.global_bydirection("down") end,
         	  {description = "focus on client below", group = "client"}
@@ -550,6 +588,13 @@ client.connect_signal("manage", function (c)
     end
 end)
 
+testPopup = awful.popup {
+	widget = testWidget,
+	placement = awful.placement.under_mouse,
+	visible = false,
+	hover = true
+}
+
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
@@ -559,8 +604,7 @@ client.connect_signal("request::titlebars", function(c)
             awful.mouse.client.move(c)
         end),
         awful.button({ }, 3, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.resize(c)
+			testPopup:move_next_to()
         end),
     }
 

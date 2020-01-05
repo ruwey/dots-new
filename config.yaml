@@ -90,8 +90,10 @@ profiles:
   # Desktop
   terminator:
     dotfiles:
-    - d_awesomewm
-    - d_emacs
+    - b_bspwm
+      #- d_awesomewm
+    - d_bspwm
+      #- d_emacs
     - d_i3
     - d_lutris
     - d_nvim
