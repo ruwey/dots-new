@@ -35,6 +35,10 @@ XF86AudioMute
 alt + Return
 	termite
 
+# Termite with tmux
+alt + shift + Return
+	launchTmux
+
 # Rofi (App Launcher)
 alt + d
 	rofi -show run
