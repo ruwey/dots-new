@@ -101,6 +101,7 @@ profiles:
     - d_scripts
     - d_spotifyd
     - f_compton.conf
+    - f_sxhkd
     - f_zprofile
     - f_zshrc
   # Laptop
