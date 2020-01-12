@@ -91,7 +91,6 @@ dotfiles:
   f_zshrc:
     src: .zshrc
     dst: ~/.zshrc
-    link: link
 
 #}}}
 
