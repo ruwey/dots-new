@@ -57,7 +57,9 @@ zplugin light zsh-users/zsh-autosuggestions
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
+{%@@ if colorscheme == "Nord" @@%}
 eval $(dircolors ~/.dir_colors)
+{%@@ endif @@%}
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zmodload zsh/complist
 compinit
@@ -73,15 +75,17 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # PowerLine 10K (Prompt) {{{
+# Config
 # Don't give me annoying config dialog
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-
-# Mode
-#POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Choose elements
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vi_mode)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+
+## Vi Mode
+POWERLEVEL9K_VI_INSERT_MODE_STRING='I'
+POWERLEVEL9K_VI_COMMAND_MODE_STRING='N'
 
 # Vcs
 # Icons
@@ -99,27 +103,35 @@ POWERLEVEL9K_VCS_STASH_ICON=' '
 POWERLEVEL9K_VCS_UNSTAGED_ICON=' '
 POWERLEVEL9K_VCS_UNTRACKED_ICON=' '
 
-## Vi Mode
-#POWERLEVEL9K_VI_MODE_BACKGROUND='red'
-#POWERLEVEL9K_VI_MODE_FOREGROUND='black'
-POWERLEVEL9K_VI_INSERT_MODE_STRING='I'
-POWERLEVEL9K_VI_COMMAND_MODE_STRING='N'
-#
-## Status
-#POWERLEVEL9K_STATUS_ERROR_BACKGROUND='yellow'
-#POWERLEVEL9K_STATUS_ERROR_FOREGROUND='black'
-#
-## Dir
-#POWERLEVEL9K_DIR_BACKGROUND='black'
-#POWERLEVEL9K_DIR_FOREGROUND='green'
+# Dir
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-#
+
 ## OS Icon
 POWERLEVEL9K_LINUX_ARCH_ICON=' '
-#POWERLEVEL9K_OS_ICON_BACKGROUND='red'
-#POWERLEVEL9K_OS_ICON_FOREGROUND='black'
+
+# Style
+{%@@ if colorscheme == "Mntns" @@%}
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=' '
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=' '
+
+# Vi Mode
+POWERLEVEL9K_VI_MODE_BACKGROUND='red'
+POWERLEVEL9K_VI_MODE_FOREGROUND='black'
+#
+## Status
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND='yellow'
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND='black'
+#
+## Dir
+POWERLEVEL9K_DIR_BACKGROUND='black'
+POWERLEVEL9K_DIR_FOREGROUND='green'
+
+# OS Icon
+POWERLEVEL9K_OS_ICON_BACKGROUND='red'
+POWERLEVEL9K_OS_ICON_FOREGROUND='black'
+{%@@ endif @@%}
 #}}}
-# }}}
+#}}}
 
 # Aliases {{{
 
