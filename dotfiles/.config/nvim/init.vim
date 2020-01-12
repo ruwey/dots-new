@@ -15,16 +15,34 @@ call plugin#dein_init('/home/ruwey/.config/nvim/plugins.yaml')
 "}}}
 
 "-- Color scheme {{{
+{%@@ if colorscheme == "Nord" @@%}
 " General
 colorscheme nord
-
-" Set a working highlight for spellcheck
-hi clear SpellBad 
-hi SpellBad cterm=underline ctermfg=9
 
 " Lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'nord'
+
+{%@@ elif colorscheme == "Mntns" @@%}
+" Set a working highlight for spellcheck
+hi clear SpellBad 
+hi SpellBad cterm=underline ctermfg=9
+
+" Set Git Gutter Column
+hi clear SignColumn
+hi SignColumn ctermbg=4
+
+" Fold
+hi clear Folded
+hi Folded ctermfg=14 ctermbg=4 cterm=bold
+
+" Line Number Color 
+hi clear LineNr
+hi clear CursorLineNr
+hi LineNr ctermfg=8
+hi CursorLineNr ctermfg=14
+
+{%@@ endif @@%}
 "-- }}}
 
 "-- Settings {{{
@@ -38,8 +56,10 @@ set nowrap
 " Disable default insert text as lightline makes it redundant
 set noshowmode
 
+{%@@ if colorscheme == "Nord" @@%}
 " Change Lightline Separator
 let g:lightline.separator = { 'left': '', 'right': '' }
+{%@@ endif @@%}
 
 "-- Startify {{{
 let g:startify_custom_header = [

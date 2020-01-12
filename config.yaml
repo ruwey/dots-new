@@ -63,7 +63,6 @@ dotfiles:
   d_nvim:
     src: .config/nvim
     dst: ~/.config/nvim
-    link: link_children
   d_pictures:
     src: Pictures
     dst: ~/Pictures
