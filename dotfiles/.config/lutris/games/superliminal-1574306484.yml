@@ -1,9 +1,0 @@
-game:
-  exe: /home/ruwey/wine/Superliminal/Install/Superliminal/Superliminal.exe
-  prefix: ~/wine/Superliminal
-  working_dir: ~/wine/Superliminal/Install
-system: {}
-wine:
-  Desktop: true
-  dxvk: true
-  esync: true

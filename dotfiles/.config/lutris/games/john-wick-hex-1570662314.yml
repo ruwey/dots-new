@@ -1,7 +1,0 @@
-game:
-  exe: /home/ruwey/Games/other/JohnWickHex/John Wick Hex.exe
-  prefix: ~/wine/JW
-system: {}
-wine:
-  Desktop: true
-  version: tkg-protonified-4.6-x86_64
