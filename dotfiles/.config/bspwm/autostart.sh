@@ -1,6 +1,10 @@
 # Autostart
 # Composite Manager
-compton &
+{%@@ if profile == "terminator" @@%}
+picom --experimental-backend &
+{%@@ elif profile == "BigBrother" @@%}
+picom &
+{%@@ endif @@%}
 
 # Notification Manager
 dunst &
@@ -10,10 +14,13 @@ dunst &
 indicator-kdeconnect &
 
 # Set Background
+{%@@ if colorscheme == "Nord" @@%}
 feh --bg-fill $HOME/Pictures/wp.jpg
-
-# Pywal (Colorscheme)
-wal -R &
+{%@@ elif colorscheme == "Mntns" @@%}
+feh --bg-fill $HOME/Pictures/wallhaven-0wg61x_1920x1080.png
+{%@@ endif @@%}
 
 # Polybar (bar)
+{%@@ if colorscheme == "Nord" @@%}
 $HOME/.config/polybar/launch.sh
+{%@@ endif @@%}
