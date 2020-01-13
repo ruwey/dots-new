@@ -11,6 +11,9 @@ export TERM=termite
 # Add scripts to path
 export PATH=$HOME/.scripts:$PATH
 
+# Add dotfile shortcut
+export d="~/.dotdrop/dotfiles"
+
 # Set dircolors
 eval $(dircolors ~/.dir_colors)
 
