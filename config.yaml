@@ -83,7 +83,6 @@ dotfiles:
   f_sxhkd:
     src: .config/sxhkd/sxhkdrc
     dst: ~/.config/sxhkd/sxhkdrc
-    link: link
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile

@@ -16,15 +16,19 @@ XF86Audio{Prev,Next,Play}
 	playerctl {previous,next,play-pause}
 
 # Volume Bindings
-XF86Audio{Raise,Lower}Volume
-	chVol {+,-}5%
-
-# Smaller Increments
-shift + XF86Audio{Raise,Lower}Volume
-	chVol {+,-}2%
+{%@@ if profile == "terminator" @@%}
+alt + {equal,minus}{_, + shift}
+{%@@ elif profile == "BigBrother" @@%}
+XF86Audio{Raise,Lower}Volume{_, + shift}
+{%@@ endif @@%}
+	chVol {+,-}{5,2}%
 
 # Mute
+{%@@ if profile == "terminator" @@%}
+ctrl + alt + BackSpace
+{%@@ elif profile == "BigBrother" @@%}
 XF86AudioMute
+{%@@ endif @@%}
 	chVol mute
 
 #}}}
