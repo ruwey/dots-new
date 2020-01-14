@@ -6,7 +6,7 @@ export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 export EDITOR=nvim
 
 # Set terminal
-export TERM=termite
+export TERMINAL=termite
 
 # Add scripts to path
 export PATH=$HOME/.scripts:$PATH
