@@ -8,7 +8,7 @@ if [ ${#mons[*]} -gt 1 ]
 then
 	bspc monitor ${mons[0]} -d 1 2 3 4 5
 	bspc monitor ${mons[1]} -d 6 7 8 9 10
-	xrandr --output HDMI-0 --right-of eDP-1-1
+	xrandr --output ${mons[0]} --right-of ${mons[1]}
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 fi
