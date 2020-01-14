@@ -13,7 +13,7 @@
 # Music Bindings
 
 XF86Audio{Prev,Next,Play}
-	playerctl {previous,next,play-pause}
+	playerctl -p $(cat $HOME/.local/share/mediaPlayer) {previous,next,play-pause}
 
 # Volume Bindings
 XF86Audio{Raise,Lower}Volume
