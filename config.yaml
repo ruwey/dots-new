@@ -1,3 +1,13 @@
+#  _____                                         
+#/\  _ `\   A Cool Guy (ruwey.com)
+#\ \ \L\ \  __  __  __  __  __    __  __  ___    
+# \ \ ,  / /\ \/\ \/\ \/\ \/\ \ /'__\/\ \/\  \   
+#  \ \ \ \ \ \ \_\ \ \ \_/ \_/ /\  __\ \ \_\  \  
+#   \ \_\ \_\ \____/\ \___x___/\ \____\/\`____ \ 
+#    \/_/\/ /\/___/  \/__//__/  \/____/\`/___/> \
+#        ____________________________________\  /
+#       /\_____________________________________/
+#       \/____________________________________/ 
 
 # Config {{{
 config:
@@ -8,6 +18,12 @@ config:
   keepdot: true
   minversion: 0.29.5
 # }}}
+
+# Variables {{{
+variables:
+  colorscheme: "Nord"
+
+#}}}
 
 # Actions {{{
 actions:
@@ -31,7 +47,6 @@ dotfiles:
   d_bspwm:
     src: .config/bspwm
     dst: ~/.config/bspwm
-    link: link_children
   d_emacs:
     src: .emacs
     dst: ~/
@@ -40,14 +55,9 @@ dotfiles:
     src: .config/i3
     dst: ~/.config/i3
     link: link_children
-  d_lutris:
-    src: .config/lutris
-    dst: ~/.config/lutris
-    link: link_children
   d_nvim:
     src: .config/nvim
     dst: ~/.config/nvim
-    link: link_children
   d_pictures:
     src: Pictures
     dst: ~/Pictures
@@ -73,7 +83,6 @@ dotfiles:
   f_sxhkd:
     src: .config/sxhkd/sxhkdrc
     dst: ~/.config/sxhkd/sxhkdrc
-    link: link
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -81,7 +90,6 @@ dotfiles:
   f_zshrc:
     src: .zshrc
     dst: ~/.zshrc
-    link: link
 
 #}}}
 
@@ -95,14 +103,18 @@ profiles:
     - d_bspwm
       #- d_emacs
     - d_i3
-    - d_lutris
     - d_nvim
     - d_pictures
     - d_scripts
     - d_spotifyd
     - f_compton.conf
+    - f_sxhkd
     - f_zprofile
     - f_zshrc
+
+    variables:
+      colorscheme: "Mntns"
+
   # Laptop
   BigBrother:
     dotfiles:
@@ -117,5 +129,6 @@ profiles:
     - f_sxhkd
     - f_zprofile
     - f_zshrc
+
 #}}}
 # vim:tabstop=2:shiftwidth=2:foldmethod=marker
