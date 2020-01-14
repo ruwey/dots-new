@@ -24,12 +24,20 @@ alt + {e,w,shift + space,f}
 	bspc node -t {tiled,pseudo_tiled,\~floating,\~fullscreen}
 
 # Set which way to split
-alt + ctrl + {h,j,k,l}
+alt + ctrl + shift + {h,j,k,l}
 	bspc node -p {west,south,north,east}
+
+# Set the split ratio
+alt + ctrl + shift + {1-9}
+	bspc node -o 0.{1-9}
 
 # Cancel any preslection
 alt + Escape
 	bspc node -p cancel
+
+# Toggle Flags
+alt + s; {h,s,p,l,m}
+	bspc node -g {hidden,sticky,private,locked,marked}
 
 #}}}
 
