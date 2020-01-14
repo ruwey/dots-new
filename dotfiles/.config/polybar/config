@@ -33,7 +33,7 @@ border-size = 4
 
 modules-left = bspwm pulseaudio
 modules-center = window
-modules-right = gmail arch-updates battery time
+modules-right = arch-updates battery time
 
 module-margin-left = 2
 
