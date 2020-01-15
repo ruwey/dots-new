@@ -96,6 +96,12 @@ set foldmethod=marker
 " View nfo file correctly
 autocmd BufReadPre *.nfo :setlocal fileencodings=cp437,utf-8
 
+" Set two space for yaml
+augroup yaml
+	autocmd!
+	autocmd FileType yaml set tabstop=2 shiftwidth=2
+augroup END
+
 "-- }}}
 
 "-- Key bindings {{{
