@@ -36,6 +36,8 @@
     - markdown
     - pandoc.markdown
     - rmd
+- repo: chrisbra/Colorizer
+  on_cmd: ColorToggle
 #}}}
 
 # File Manager {{{

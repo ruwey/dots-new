@@ -126,6 +126,9 @@ nnoremap <leader>nn :set number!<cr>
 " Toggle word wrap
 nnoremap <leader>ww :set wrap!<cr>
 
+" Toggle Color Toggle
+nnoremap <leader>ch :ColorToggle<cr>
+
 " Resize bindings
 noremap <leader>= :vertical resize +5<cr>
 noremap <leader>- :vertical resize -5<cr>
