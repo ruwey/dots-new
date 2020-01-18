@@ -31,6 +31,10 @@ XF86AudioMute
 {%@@ endif @@%}
 	chVol mute
 
+# Change media player
+alt + m
+	chMp
+
 #}}}
 
 # Start Programs {{{
