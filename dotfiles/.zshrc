@@ -55,6 +55,7 @@ zplugin light zsh-users/zsh-autosuggestions
 #(cat $HOME/.config/wpg/sequences &)
 
 # Basic auto/tab complete:
+fpath=($HOME/.scripts/Completion $fpath)
 autoload -U compinit
 zstyle ':completion:*' menu select
 {%@@ if colorscheme == "Nord" @@%}
