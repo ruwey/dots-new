@@ -63,3 +63,9 @@ function plugin#refresh()
 	call map(dein#check_clean(), "delete(v:val, 'rf')")
 	call dein#recache_runtimepath()
 endfunction
+
+function plugin#center(lines)
+	let longest_line = max(map(copy(a:lines), 'strwidth(v:val)'))
+	return map(copy(a:lines),
+	      \ 'repeat(" ", (&columns / 2) - (longest_line / 2) - 1) . v:val')
+endfunction

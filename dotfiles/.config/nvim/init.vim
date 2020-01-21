@@ -62,7 +62,7 @@ let g:lightline.separator = { 'left': '', 'right': '' }
 {%@@ endif @@%}
 
 "-- Startify {{{
-let g:startify_custom_header = [
+let s:startify_header_text = [
 			\ '	 ██       ██          ██                                     ',
 			\ '	░██      ░██         ░██                                     ',
 			\ '	░██   █  ░██  █████  ░██  █████   ██████  ██████████   █████ ',
@@ -72,6 +72,10 @@ let g:startify_custom_header = [
 			\ '	░██░   ░░░██░░██████ ███░░█████ ░░██████  ███ ░██ ░██░░██████',
 			\ '	░░       ░░  ░░░░░░ ░░░  ░░░░░   ░░░░░░  ░░░  ░░  ░░  ░░░░░░ ',
 			\ ]
+let g:startify_custom_header = plugin#center(s:startify_header_text)
+if expand('%:t') == ""
+	call dein#source('vim-startify')
+endif
 " }}}
 
 " Get a diff between curent file and saved file
