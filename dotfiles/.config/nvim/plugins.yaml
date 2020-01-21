@@ -41,8 +41,24 @@
 #}}}
 
 # File Manager {{{
+# File Exploration
 - repo: Shougo/defx.nvim
   on_cmd: Defx
+
+# File Search with fzf
+- repo: https://github.com/junegunn/fzf.git
+  build: './install --all'
+  merged: 0
+  on_cmd: FZF
+
+- repo: https://github.com/junegunn/fzf.vim.git
+  depends: fzf.git
+  on_cmd: 
+    - Files
+    - GFiles
+    - Lines
+    - Blines
+
 #}}}
 
 # Git {{{
