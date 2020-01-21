@@ -31,7 +31,7 @@
 - repo: nvie/vim-ini
   on_ft: dosini
 - repo: iamcco/markdown-preview.nvim
-  build: cd app & yarn install
+  hook_post_source: mkdp#util#install()
   on_ft:
     - markdown
     - pandoc.markdown
