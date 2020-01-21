@@ -15,7 +15,7 @@ call plugin#dein_init('/home/ruwey/.config/nvim/plugins.yaml')
 "}}}
 
 "-- Color scheme {{{
-{%@@ if colorscheme == "Nord" @@%}
+"{%@@ if colorscheme == "Nord" @@%}
 " General
 colorscheme nord
 
@@ -23,7 +23,7 @@ colorscheme nord
 let g:lightline = {}
 let g:lightline.colorscheme = 'nord'
 
-{%@@ elif colorscheme == "Mntns" @@%}
+"{%@@ elif colorscheme == "Mntns" @@%}
 " Set a working highlight for spellcheck
 hi clear SpellBad 
 hi SpellBad cterm=underline ctermfg=9
@@ -42,7 +42,7 @@ hi clear CursorLineNr
 hi LineNr ctermfg=8
 hi CursorLineNr ctermfg=14
 
-{%@@ endif @@%}
+"{%@@ endif @@%}
 "-- }}}
 
 "-- Settings {{{
@@ -56,10 +56,10 @@ set nowrap
 " Disable default insert text as lightline makes it redundant
 set noshowmode
 
-{%@@ if colorscheme == "Nord" @@%}
+"{%@@ if colorscheme == "Nord" @@%}
 " Change Lightline Separator
 let g:lightline.separator = { 'left': '', 'right': '' }
-{%@@ endif @@%}
+"{%@@ endif @@%}
 
 "-- Startify {{{
 let s:startify_header_text = [
@@ -73,9 +73,6 @@ let s:startify_header_text = [
 			\ '	░░       ░░  ░░░░░░ ░░░  ░░░░░   ░░░░░░  ░░░  ░░  ░░  ░░░░░░ ',
 			\ ]
 let g:startify_custom_header = plugin#center(s:startify_header_text)
-if expand('%:t') == ""
-	call dein#source('vim-startify')
-endif
 " }}}
 
 " Get a diff between curent file and saved file
@@ -106,6 +103,11 @@ augroup yaml
 	autocmd FileType yaml set tabstop=2 shiftwidth=2
 augroup END
 
+" Startup
+autocmd VimEnter *
+	\ if !argc() 
+	\ |	Startify "Open Startify
+	\ | endif
 "-- }}}
 
 "-- Key bindings {{{
@@ -178,7 +180,6 @@ let g:coc_snippet_next = '<C-Space>'
 " Make <ld> go to <leader>
 iabbrev ld leader
 
-iabbrev @@ ruwey<cr>gd@ruwey.com
 autocmd FileType vim :iabbrev <buffer> nnr nnoremap
 
 "-- }}}
