@@ -20,6 +20,8 @@ config:
   dotpath: dotfiles
   keepdot: true
   minversion: 0.29.5
+  import_variables:
+    - colors/{{@@ colorscheme @@}}.yaml
 # }}}
 
 # Variables {{{
