@@ -3,23 +3,28 @@
 $HOME/.config/bspwm/autostart.sh &
 sxhkd $HOME/.config/sxhkd/bspwm &
 
+#{%@@ if profile == "terminator" @@%} 
 mons=($(xrandr | grep " connected" | awk '{ print $1 }'))
 if [ ${#mons[*]} -gt 1 ]
 then
 	bspc monitor ${mons[0]} -d 1 2 3 4 5
 	bspc monitor ${mons[1]} -d 6 7 8 9 10
-	xrandr --output ${mons[0]} --right-of ${mons[1]}
+	xrandr --output ${mons[0]} --left-of ${mons[1]}
+	bspc desktop -f 10
 else
-       bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 fi
+#{%@@ else @@%} 
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+#{%@@ endif @@%} 
 
-#{%@@ if colorscheme == "Mntns" @@%}
+#{%@@ if colorscheme == "Mntns" @@%} 
 bspc config border_width	0
 bspc config window_gap		20
-#{%@@ elif colorscheme == "Nord" @@%}
+#{%@@ elif colorscheme == "Nord" @@%} 
 bspc config border_width	2
 bspc config window_gap		18
-#{%@@ endif @@%}
+#{%@@ endif @@%} 
 
 
 bspc config pointer_modifier	mod1
