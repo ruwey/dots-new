@@ -61,4 +61,10 @@ alt + shift + d
 alt + ctrl + r
 	pkill -USR1 -x sxhkd
 
+# Make current window blink while holding tab button
+alt + Tab
+	picom-trans -c 50 
+@alt + Tab
+	picom-trans -c 100
+
 # vim:foldmethod=marker
