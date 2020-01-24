@@ -2,7 +2,7 @@
 
 sessions=$(tmux ls -F "#S (#{t:session_created})")
 
-choice=$(printf "new\nkill\n$sessions" | rofi -dmenu)
+choice=$(printf "$sessions\nnew\nkill" | rofi -dmenu)
 
 case $choice in
 	"new")
