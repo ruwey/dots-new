@@ -14,7 +14,7 @@
 
 # Config {{{
 config:
-  backup: true
+  backup: false
   banner: false
   create: true
   dotpath: dotfiles
