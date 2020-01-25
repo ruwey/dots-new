@@ -44,7 +44,6 @@ dotfiles:
   b_bspwm:
     src: .config/sxhkd/bspwm
     dst: ~/.config/sxhkd/bspwm
-    link: link
   d_awesomewm:
     src: .config/awesome
     dst: ~/.config/awesome
