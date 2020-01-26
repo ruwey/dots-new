@@ -60,6 +60,9 @@ alt + shift + k
 alt + shift + l
 	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v 10 0; else; bspc node -s east; fi
 
+alt + ctrl {h,j,k,l}
+	move {west,south,north,east}
+
 # Switch node with biggest node
 alt + g
 	bspc node -s biggest.local
