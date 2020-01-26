@@ -1,2 +1,0 @@
-#!/bin/sh
-~/Programs/spicetify-cli/spietify $@
