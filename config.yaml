@@ -30,6 +30,14 @@ variables:
 
 #}}}
 
+# Transformations {{{
+trans_read:
+  unencrypt: "gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}"
+trans_write:
+  encrypt: "gpg2 --default-recipient-self --output {1} --encrypt {0}"
+
+# }}}
+
 # Actions {{{
 actions:
 
@@ -74,15 +82,16 @@ dotfiles:
     src: .scripts
     dst: ~/.scripts
     link: link
-  # Spotify Daemon
-  d_spotifyd:
-    src: .config/spotifyd
-    dst: ~/.config/spotifyd
-    link: link_children
   f_compton.conf:
     src: .config/compton.conf
     dst: ~/.config/compton.conf
     link: link
+  # Spotify Daemon
+  f_spotifyd:
+    src: .config/spotifyd/spotifyd.conf
+    dst: ~/.config/spotifyd/spotifyd.conf
+    trans_read: unencrypt
+    trans_write: encrypt
   # Generic keybindings
   f_sxhkd:
     src: .config/sxhkd/sxhkdrc
@@ -110,8 +119,8 @@ profiles:
     - d_nvim
     - d_pictures
     - d_scripts
-    - d_spotifyd
     - f_compton.conf
+    - f_spotifyd
     - f_sxhkd
     - f_zprofile
     - f_zshrc
@@ -129,8 +138,8 @@ profiles:
     - d_pictures
     - d_polybar
     - d_scripts
-    - d_spotifyd
     - f_sxhkd
+    - f_spotifyd
     - f_zprofile
     - f_zshrc
 
