@@ -38,6 +38,8 @@
     - rmd
 - repo: chrisbra/Colorizer
   on_cmd: ColorHighlight
+- repo: KabbAmine/vCoolor.vim
+  on_cmd: VCoolor
 #}}}
 
 # File Manager {{{
