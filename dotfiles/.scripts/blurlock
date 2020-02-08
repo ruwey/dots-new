@@ -1,0 +1,15 @@
+#!/bin/bash
+# A basic blur lock screen
+
+maim /tmp/lock_bg
+
+convert /tmp/lock_bg -blur 0x10 /tmp/lock_bg_blur
+
+rm /tmp/lock_bg
+
+i3lock -ui /tmp/lock_bg_blur
+
+if [ "$1" = "-s" ]; then
+	sleep 1
+	sudo systemctl suspend
+fi
