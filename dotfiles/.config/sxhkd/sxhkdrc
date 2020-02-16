@@ -47,6 +47,10 @@ alt + Return
 alt + shift + Return
 	launchTmux
 
+# Start Blurlock Script
+alt {_,+ shift }+ BackSpace
+	blurlock {_,-s}
+
 # Rofi (App Launcher)
 alt + d
 	rofi -show run
