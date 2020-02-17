@@ -75,10 +75,6 @@ dotfiles:
     src: .scripts
     dst: ~/.scripts
     link: link
-  f_compton.conf:
-    src: .config/compton.conf
-    dst: ~/.config/compton.conf
-    link: link
   # Spotify Daemon
   f_spotifyd:
     src: .config/spotifyd/spotifyd.conf
