@@ -12,7 +12,7 @@
 #                                                #
 ##################################################
 
-# Config {{{
+# Config
 config:
   backup: false
   banner: false
@@ -22,28 +22,21 @@ config:
   minversion: 0.29.5
   import_variables:
     - colors/{{@@ colorscheme @@}}.yaml
-# }}}
 
-# Variables {{{
+# Varaibles
 variables:
   colorscheme: "Nord"
 
-#}}}
-
-# Transformations {{{
+# Transformations 
 trans_read:
   unencrypt: "gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}"
 trans_write:
   encrypt: "gpg2 --default-recipient-self --output {1} --encrypt {0}"
 
-# }}}
-
-# Actions {{{
+# Actions 
 actions:
 
-#}}}
-
-# Dotfiles {{{
+# Dotfiles 
 # The first letter indicates the type:
 # b     binding
 # d     directory
@@ -104,9 +97,7 @@ dotfiles:
     src: .zshrc
     dst: ~/.zshrc
 
-#}}}
-
-# Profiles {{{
+# Profiles 
 profiles:
   # Desktop
   terminator:
@@ -142,5 +133,3 @@ profiles:
     - f_spotifyd
     - f_zprofile
     - f_zshrc
-
-#}}}
