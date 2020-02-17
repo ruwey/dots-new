@@ -15,9 +15,9 @@ indicator-kdeconnect &
 
 # Set Background
 {%@@ if colorscheme == "Nord" @@%}
-feh --bg-fill $HOME/Pictures/wp.jpg
+feh --bg-fill $HOME/Pictures/ColdSpace.jpg
 {%@@ elif colorscheme == "Mntns" @@%}
-feh --bg-fill $HOME/Pictures/wallhaven-0wg61x_1920x1080.png
+feh --bg-fill $HOME/Pictures/Mntns.jpg
 {%@@ endif @@%}
 
 # Polybar (bar)
