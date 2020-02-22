@@ -106,7 +106,6 @@ profiles:
     - d_nvim
     - d_pictures
     - d_scripts
-    - f_compton.conf
     - f_spotifyd
     - f_sxhkd
     - f_zprofile
