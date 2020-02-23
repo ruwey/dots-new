@@ -22,7 +22,7 @@ bindkey -v
 # Plugins {{{
 # Auto Add {{{
 ### Added by Zplugin's installer
-source '$HOME/.zinit/bin/zinit.zsh'
+source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zplugin's installer chunk
