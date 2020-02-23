@@ -22,32 +22,32 @@ bindkey -v
 # Plugins {{{
 # Auto Add {{{
 ### Added by Zplugin's installer
-source '/home/ruwey/.zplugin/bin/zplugin.zsh'
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+source '$HOME/.zinit/bin/zinit.zsh'
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zplugin's installer chunk
 # }}}
 
 # Prompt
-zplugin ice depth=1; zplugin light romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # For the selection menu when looking at autocomplete
-#zplugin ice wait'!1'
-#zplugin snippet OMZ::lib/completion.zsh
+#zinit ice wait'!1'
+#zinit snippet OMZ::lib/completion.zsh
 
 # Crasis menu
-zplugin ice wait'!1'
-zplugin light zdharma/zui
-zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
-zplugin load zdharma/zplugin-crasis
+zinit ice wait'!1'
+zinit light zdharma/zui
+zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
+zinit load zdharma/zinit-crasis
 
 # Fish like syntax highlighting
-zplugin ice wait'!0'
-zplugin light zdharma/fast-syntax-highlighting 
+zinit ice wait'!0'
+zinit light zdharma/fast-syntax-highlighting 
 
 # Fish like autosuggestions
-zplugin ice wait'!1' atload"_zsh_autosuggest_start"
-zplugin light zsh-users/zsh-autosuggestions
+zinit ice wait'!1' atload"_zsh_autosuggest_start"
+zinit light zsh-users/zsh-autosuggestions
 # }}}
 
 # Configuration {{{ 
