@@ -14,6 +14,9 @@ export PATH=$HOME/.scripts:$PATH
 # Add dotfile shortcut
 export d=$HOME/.dotdrop/dotfiles
 
+# Add automound shortcut
+export atmt=/run/media/ruwey
+
 # Set dircolors
 eval $(dircolors ~/.dir_colors)
 
