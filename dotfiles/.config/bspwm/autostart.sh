@@ -1,10 +1,10 @@
 # Autostart
 # Composite Manager
-{%@@ if profile == "terminator" @@%}
+#{%@@ if profile == "terminator" @@%}#
 picom --experimental-backend &
-{%@@ elif profile == "BigBrother" @@%}
+#{%@@ elif profile == "BigBrother" @@%}#
 picom &
-{%@@ endif @@%}
+#{%@@ endif @@%}#
 
 # Notification Manager
 dunst &
@@ -14,13 +14,13 @@ dunst &
 indicator-kdeconnect &
 
 # Set Background
-{%@@ if colorscheme == "Nord" @@%}
+#{%@@ if colorscheme == "Nord" @@%}#
 feh --bg-fill $HOME/Pictures/ColdSpace.jpg
-{%@@ elif colorscheme == "Mntns" @@%}
-feh --bg-fill $HOME/Pictures/Mntns.jpg
-{%@@ endif @@%}
+#{%@@ elif colorscheme == "Mntns" @@%}#
+feh --bg-fill $HOME/Pictures/Mntns.png
+#{%@@ endif @@%}#
 
 # Polybar (bar)
-{%@@ if colorscheme == "Nord" @@%}
+#{%@@ if colorscheme == "Nord" @@%}#
 $HOME/.config/polybar/launch.sh
-{%@@ endif @@%}
+#{%@@ endif @@%}#
