@@ -75,10 +75,6 @@ alt + {n,p}
 alt + t
 	bspc node -f @parent
 
-# Rotate current tree
-alt + r
-	bspc node -R 90
-
 # Switch windows cyclic
 alt + shift + {n,p}
 	bspc node -s {next,prev}.local
