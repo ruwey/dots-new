@@ -3,7 +3,7 @@
 $HOME/.config/bspwm/autostart.sh &
 sxhkd $HOME/.config/sxhkd/bspwm &
 
-#{%@@ if profile == "terminator" @@%} 
+#{%@@ if profile == "terminator" @@%}#
 mons=($(xrandr | grep " connected" | awk '{ print $1 }'))
 if [ ${#mons[*]} -gt 1 ]
 then
@@ -14,17 +14,17 @@ then
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 fi
-#{%@@ else @@%} 
+#{%@@ else @@%}#
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-#{%@@ endif @@%} 
+#{%@@ endif @@%}#
 
-#{%@@ if colorscheme == "Mntns" @@%} 
+#{%@@ if colorscheme == "Mntns" @@%}#
 bspc config border_width	0
 bspc config window_gap		20
-#{%@@ elif colorscheme == "Nord" @@%} 
+#{%@@ elif colorscheme == "Nord" @@%}#
 bspc config border_width	2
 bspc config window_gap		18
-#{%@@ endif @@%} 
+#{%@@ endif @@%}#
 
 
 bspc config pointer_modifier	mod1
@@ -39,6 +39,7 @@ bspc rule -a Termite:browserEditor state=floating
 bspc rule -a firefox:Toolkit sticky=on
 # Make emacs tiled
 bspc rule -a Emacs state=tiled
+# Rules for font windows
 
 # Set up a scratchpad window
 bspc rule -a Scratch:\* \
@@ -49,4 +50,3 @@ bspc rule -a Scratch:\* \
 # Set up terminal scratchpad 
 bspc rule -a Scratch:term \
 	rectangle=800x200+1116+840
-
