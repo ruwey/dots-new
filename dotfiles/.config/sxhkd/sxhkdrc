@@ -61,8 +61,8 @@ alt + shift + d
 	rofi -run-command "gksu {cmd}" -show run
 
 # Launch Commonly Used Programs
-alt + r; {b,e,f,g}
-	{firefox,emacs,termite --name "fontpreview" -e fontpreview,launch}
+alt + r; {b,e,f,g,y}
+	{firefox,emacs,termite --name "fontpreview" -e fontpreview,launch,yubioath-desktop}
 
 # }}}
 
