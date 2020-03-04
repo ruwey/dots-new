@@ -40,7 +40,8 @@ bspc rule -a firefox:Toolkit sticky=on
 # Make emacs tiled
 bspc rule -a Emacs state=tiled
 # Make yubico authentication
-bspc rule -a Yubico\ Authenticator state=floating center=on rectange=952x800
+bspc rule -a Yubico\ Authenticator rectange=952x800 \
+	state=floating center=on sticky=on
 # Rules for font preview
 bspc rule -a \*:fontpreview state=floating
 bspc rule -a Termite:fontpreiew rectangle=493x635+2634+387
