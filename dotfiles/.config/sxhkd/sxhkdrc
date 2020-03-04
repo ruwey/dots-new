@@ -13,8 +13,12 @@
 # Media Keys {{{
 # Music Bindings
 
-XF86Audio{Prev,Next,Play}
-	playerctl -p $(cat $HOME/.local/share/mediaPlayer) {previous,next,play-pause}
+#{%@@ if profile == "terminator" @@%}#
+F{2-4}
+#{%@@ elif profile == "BigBrother" @@%}#
+XF86Audio{Prev,Play,Next}
+#{%@@ endif @@%}#
+	playerctl -p $(cat $HOME/.local/share/mediaPlayer) {previous,play-pause,next}
 
 # Volume Bindings
 {%@@ if profile == "terminator" @@%}
