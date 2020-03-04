@@ -40,6 +40,11 @@ bspc rule -a firefox:Toolkit sticky=on
 # Make emacs tiled
 bspc rule -a Emacs state=tiled
 # Rules for font windows
+bspc rule -a \*:fontpreview state=floating
+bspc rule -a Termite:fontpreiew rectangle=493x635+2634+387
+bspc rule -a Sxiv:fontpreview \
+	rectangle=493x325+2634+47
+
 
 # Set up a scratchpad window
 bspc rule -a Scratch:\* \
