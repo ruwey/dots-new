@@ -8,5 +8,5 @@ time="$(acpi -b | awk -F'[,:%]' '{ print $6 }')"
 
 # Script
 if [ $stat = "Discharging" ] && [ $charge -lt 15 ]; then
-	dunstify -u critical -r 818 -t 30000 " Battery Level:$charge%" "$time\ minutes remaining"
+	dunstify -u critical -r 818 -t 8000 " Battery Level:$charge%" "$time\ minutes remaining"
 fi
