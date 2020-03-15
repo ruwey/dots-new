@@ -133,6 +133,10 @@ format-background = ${colors.background-alt}
 format-prefix = "  "
 format-prefix-background = ${colors.foreground-alt}
 format-prefix-foreground = ${colors.background}
+
+click-left = $HOME/.scripts/sysUpdate
+click-middle = $HOME/.scripts/sysUpdate
+click-right = $HOME/.scripts/sysUpdate
 ; }}}
 
 ; Battery {{{
