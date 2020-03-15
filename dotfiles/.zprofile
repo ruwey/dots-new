@@ -1,6 +1,7 @@
 # Set path
 export PATH=$HOME/.scripts:$PATH:$HOME/.local/bin
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Set editor
 export EDITOR=nvim
