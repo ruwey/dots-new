@@ -75,6 +75,10 @@ dotfiles:
     src: .scripts
     dst: ~/.scripts
     link: link
+  f_eidolon:
+    src: .config/eidolon/config.json
+    dst: ~/.config/eidolon/config.json
+    link: link
   # Spotify Daemon
   f_spotifyd:
     src: .config/spotifyd/spotifyd.conf
@@ -124,6 +128,7 @@ profiles:
     - d_pictures
     - d_polybar
     - d_scripts
+    - f_eidolon
     - f_sxhkd
     - f_spotifyd
     - f_zprofile
