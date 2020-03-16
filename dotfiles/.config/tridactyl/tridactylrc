@@ -1,0 +1,20 @@
+" Remove all existing configuration
+sanitise tridactyllocal tridactylsync
+
+" Spicific search urls
+set searchurls.protondb 	https://www.protondb.com/search?q=
+set searchurls.itad		https://new.isthereanydeal.com/search/?q=
+set searchurls.aur		https://aur.archlinux.org/packages/?O=0&K=
+
+" Private binding
+bind i fillcmdline winopen -private
+
+" Change tabclose to x
+bind x tabclose
+unbind d
+
+" Make custom nvim as editor
+set editorcmd termite --name browserEditor -e "nvim %f -c 'normal %lG%cl'"
+
+" Set colorscheme
+colorscheme dark
