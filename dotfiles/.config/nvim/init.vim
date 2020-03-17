@@ -169,25 +169,6 @@ vnoremap <C-y> "+y
 " Bind paste to + register
 map <C-p> "+p
 
-" Auto completion for parentheses ect.
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
-inoremap < <><Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
-
-" Surround next wornd in visual mode
-vnoremap <leader>( <Esc>`>a)<Esc>`<i(<Esc>
-vnoremap <leader>[ <Esc>`>a]<Esc>`<i[<Esc>
-vnoremap <leader>{ <Esc>`>a}<Esc>`<i{<Esc>
-vnoremap <leader>< <Esc>`>a><Esc>`<i<<Esc>
-vnoremap <leader>" <Esc>`>a"<Esc>`<i"<Esc>
-vnoremap <leader>' <Esc>`>a'<Esc>`<i'<Esc>
-
-" Skip next instance of a surrounding character
-inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
-
 " Exit terminal mode with esc
 tnoremap <Esc> <C-\><C-n>
 
