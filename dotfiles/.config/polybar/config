@@ -127,6 +127,7 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/updates-arch-combined.sh
 interval = 600
 
+label = %output:02%
 format = " <label> "
 format-background = ${colors.background-alt}
 
