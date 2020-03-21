@@ -18,6 +18,9 @@ export d=$HOME/.dotdrop/dotfiles
 # Add automound shortcut
 export atmt=/run/media/ruwey
 
+# FZF default command
+export FZF_DEFAULT_COMMAND=find .
+
 # Set dircolors
 eval $(dircolors ~/.dir_colors)
 
