@@ -19,7 +19,7 @@ export d=$HOME/.dotdrop/dotfiles
 export atmt=/run/media/ruwey
 
 # FZF default command
-export FZF_DEFAULT_COMMAND=find .
+export FZF_DEFAULT_COMMAND="find ."
 
 # Set dircolors
 eval $(dircolors ~/.dir_colors)
