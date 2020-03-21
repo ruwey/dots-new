@@ -94,7 +94,7 @@ function! s:DiffWithSaved()
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 
-" Automaticaly go to insert mode in the terminal
+" Automatically go to insert mode in the terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " No numbers in terminal
@@ -121,7 +121,10 @@ autocmd VimEnter *
 
 "-- Key bindings {{{
 " Set leader key
-let mapleader = ","
+let mapleader = " "
+
+" Browse files
+nnoremap <leader>. :File <CR>
 
 " Open vimrc in a split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
