@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tput setaf 1; tput setab 0 
+tput setaf 1;
 printf "  ____  __  __  _____    \n"
 tput setaf 2
 printf " /',__\/\ \/\ \/\ '__\`\  \n"
