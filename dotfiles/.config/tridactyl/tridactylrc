@@ -18,3 +18,6 @@ set editorcmd termite --name browserEditor -e "nvim %f -c 'normal %lG%cl'"
 
 " Set colorscheme
 colorscheme dark
+
+" Set newtab focus
+set newtabfocus page
