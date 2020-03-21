@@ -41,6 +41,8 @@ bspc rule -a firefox:Toolkit sticky=on state=floating
 bspc rule -a Emacs state=tiled
 # Make yubico authentication
 bspc rule -a Yubico\ Authenticator state=floating center=on rectange=952x800
+# Gnome Calculator
+bspc rule -a Gnome-calculator:gnome-calculator state=floating
 # Rules for font preview
 bspc rule -a \*:fontpreview state=floating
 bspc rule -a Termite:fontpreiew rectangle=493x635+2634+387
