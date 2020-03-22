@@ -65,8 +65,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
 
 # Vim bindings for completion
 bindkey -M menuselect 'h' vi-backward-char
