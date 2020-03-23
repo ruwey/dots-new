@@ -163,6 +163,9 @@ alias dotdrop="DOTDROP_CONFIG=~/.dotdrop/config.yaml ~/.dotdrop/dotdrop.sh"
 alias c=clear
 
 alias scdl="youtube-dl --embed-thumbnail -f mp3 -i --add-metadata"
+
+# Link to Qmk Firmware from git
+alias qmk="~/Programs/qmk_firmware/bin/qmk"
 # }}}
 
 # vim:foldmethod=marker
