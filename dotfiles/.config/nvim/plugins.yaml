@@ -8,7 +8,10 @@
 - repo: itchyny/lightline.vim
 - repo: honza/vim-snippets
   depends: coc.nvim
+  # Colorscheme
 - repo: arcticicestudio/nord-vim
+  # Auto complete pairs (very cool)
+- repo: jiangmiao/auto-pairs
   #}}}
 
 # Lazyloaded {{{

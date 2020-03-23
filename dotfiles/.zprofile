@@ -1,6 +1,7 @@
 # Set path
 export PATH=$HOME/.scripts:$PATH:$HOME/.local/bin
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Set editor
 export EDITOR=nvim
@@ -16,6 +17,9 @@ export d=$HOME/.dotdrop/dotfiles
 
 # Add automound shortcut
 export atmt=/run/media/ruwey
+
+# FZF default command
+export FZF_DEFAULT_COMMAND="find ."
 
 # Set dircolors
 eval $(dircolors ~/.dir_colors)

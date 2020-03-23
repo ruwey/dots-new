@@ -71,6 +71,14 @@ dotfiles:
     src: .scripts
     dst: ~/.scripts
     link: link
+  d_tridactyl:
+    src: .config/tridactyl
+    dst: ~/.config/tridactyl
+    link: link_children
+  f_eidolon:
+    src: .config/eidolon/config.json
+    dst: ~/.config/eidolon/config.json
+    link: link
   # Spotify Daemon
   f_spotifyd:
     src: .config/spotifyd/spotifyd.conf
@@ -95,12 +103,12 @@ profiles:
   terminator:
     dotfiles:
     - b_bspwm
-      #- d_awesomewm
     - d_bspwm
     - d_i3
     - d_nvim
     - d_pictures
     - d_scripts
+    - d_tridactyl
     - f_spotifyd
     - f_sxhkd
     - f_zprofile
@@ -118,6 +126,8 @@ profiles:
     - d_pictures
     - d_polybar
     - d_scripts
+    - d_tridactyl
+    - f_eidolon
     - f_sxhkd
     - f_spotifyd
     - f_zprofile

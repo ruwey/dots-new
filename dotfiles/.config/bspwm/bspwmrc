@@ -36,12 +36,14 @@ bspc rule -a Surf state=tiled
 # Tridactyl nvim entry
 bspc rule -a Termite:browserEditor state=floating
 # Firefox picture in picture
-bspc rule -a firefox:Toolkit sticky=on
+bspc rule -a firefox:Toolkit sticky=on state=floating
 # Make emacs tiled
 bspc rule -a Emacs state=tiled
 # Make yubico authentication
 bspc rule -a Yubico\ Authenticator rectange=952x800 \
 	state=floating center=on sticky=on
+# Gnome Calculator
+bspc rule -a Gnome-calculator:gnome-calculator state=floating
 # Rules for font preview
 bspc rule -a \*:fontpreview state=floating
 bspc rule -a Termite:fontpreiew rectangle=493x635+2634+387

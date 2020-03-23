@@ -127,12 +127,17 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/updates-arch-combined.sh
 interval = 600
 
+label = %output:02%
 format = " <label> "
 format-background = ${colors.background-alt}
 
 format-prefix = "  "
 format-prefix-background = ${colors.foreground-alt}
 format-prefix-foreground = ${colors.background}
+
+click-left = $HOME/.scripts/sysUpdate
+click-middle = $HOME/.scripts/sysUpdate
+click-right = $HOME/.scripts/sysUpdate
 ; }}}
 
 ; Battery {{{

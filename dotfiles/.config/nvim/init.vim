@@ -56,24 +56,33 @@ set nowrap
 " Disable default insert text as lightline makes it redundant
 set noshowmode
 
-"{%@@ if colorscheme == "Nord" @@%}
+"{%@@ if colorscheme == "Nord" @@%}"
 " Change Lightline Separator
 let g:lightline.separator = { 'left': '', 'right': '' }
-"{%@@ endif @@%}
+"{%@@ endif @@%}"
 
 "-- Startify {{{
+"let s:startify_header_text = [
+"			\ ' ██       ██          ██                                     ',
+"			\ '░██      ░██         ░██                                     ',
+"			\ '░██   █  ░██  █████  ░██  █████   ██████  ██████████   █████ ',
+"			\ '░██  ███ ░██ ██░░░██ ░██ ██░░░██ ██░░░░██░░██░░██░░██ ██░░░██',
+"			\ '░██ ██░██░██░███████ ░██░██  ░░ ░██   ░██ ░██ ░██ ░██░███████',
+"			\ '░████ ░░████░██░░░░  ░██░██   ██░██   ░██ ░██ ░██ ░██░██░░░░ ',
+"			\ '░██░   ░░░██░░██████ ███░░█████ ░░██████  ███ ░██ ░██░░██████',
+"			\ '░░       ░░  ░░░░░░ ░░░  ░░░░░   ░░░░░░  ░░░  ░░  ░░  ░░░░░░ ',
+"			\ ]
 let s:startify_header_text = [
-			\ '	 ██       ██          ██                                     ',
-			\ '	░██      ░██         ░██                                     ',
-			\ '	░██   █  ░██  █████  ░██  █████   ██████  ██████████   █████ ',
-			\ '	░██  ███ ░██ ██░░░██ ░██ ██░░░██ ██░░░░██░░██░░██░░██ ██░░░██',
-			\ '	░██ ██░██░██░███████ ░██░██  ░░ ░██   ░██ ░██ ░██ ░██░███████',
-			\ '	░████ ░░████░██░░░░  ░██░██   ██░██   ░██ ░██ ░██ ░██░██░░░░ ',
-			\ '	░██░   ░░░██░░██████ ███░░█████ ░░██████  ███ ░██ ░██░░██████',
-			\ '	░░       ░░  ░░░░░░ ░░░  ░░░░░   ░░░░░░  ░░░  ░░  ░░  ░░░░░░ ',
+			\ "  ____  __  __  _____   ",
+			\ " /',__\\/\\ \\/\\ \\/\\ '__`\\ ",
+			\ "/\\__, `\\ \\ \\_\\ \\ \\ \\L\\ \\",
+			\ "\\/\\____/\\ \\____/\\ \\ ,__/",
+			\ " \\/___/  \\/___/  \\ \\ \\/ ",
+			\ "                  \\ \\_\\ ",
+			\ "                   \\/_/ ",
 			\ ]
 let g:startify_custom_header = plugin#center(s:startify_header_text)
-" }}}
+""}}}
 
 " Get a diff between curent file and saved file
 function! s:DiffWithSaved()
@@ -85,7 +94,7 @@ function! s:DiffWithSaved()
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 
-" Automaticaly go to insert mode in the terminal
+" Automatically go to insert mode in the terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " No numbers in terminal
@@ -112,7 +121,10 @@ autocmd VimEnter *
 
 "-- Key bindings {{{
 " Set leader key
-let mapleader = ","
+let mapleader = " "
+
+" Browse files
+nnoremap <leader>. :File <CR>
 
 " Open vimrc in a split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
