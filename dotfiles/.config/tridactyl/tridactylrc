@@ -21,3 +21,7 @@ colorscheme dark
 
 " Set newtab focus
 set newtabfocus page
+
+" Set school byndings
+bind s fillcmdline tabopen -c School
+bind S current_url tabopen -c School
