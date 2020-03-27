@@ -75,6 +75,10 @@ dotfiles:
     src: .config/tridactyl
     dst: ~/.config/tridactyl
     link: link_children
+  f_dircolors:
+    src: .dir_colors
+    dst: ~/.dir_colors
+    link: link
   f_eidolon:
     src: .config/eidolon/config.json
     dst: ~/.config/eidolon/config.json
@@ -127,6 +131,7 @@ profiles:
     - d_polybar
     - d_scripts
     - d_tridactyl
+    - f_dircolors
     - f_eidolon
     - f_sxhkd
     - f_spotifyd
