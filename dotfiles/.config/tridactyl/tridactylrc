@@ -5,6 +5,7 @@ sanitise tridactyllocal tridactylsync
 set searchurls.protondb 	https://www.protondb.com/search?q=
 set searchurls.itad		https://new.isthereanydeal.com/search/?q=
 set searchurls.aur		https://aur.archlinux.org/packages/?O=0&K=
+set searchurls.cnh		http://www.chinesehideout.com/tools/strokeorder/index.php?c=
 
 " Private binding
 bind i fillcmdline winopen -private
