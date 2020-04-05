@@ -7,9 +7,6 @@ set searchurls.itad		https://new.isthereanydeal.com/search/?q=
 set searchurls.aur		https://aur.archlinux.org/packages/?O=0&K=
 set searchurls.cnh		http://www.chinesehideout.com/tools/strokeorder/index.php?c=
 
-" Private binding
-bind i fillcmdline winopen -private
-
 " Change tabclose to x
 bind x tabclose
 unbind d
@@ -22,6 +19,10 @@ colorscheme dark
 
 " Set newtab focus
 set newtabfocus page
+
+" Private binding
+bind i fillcmdline winopen -private
+bind I current_url winopen -private
 
 " Set school byndings
 bind s fillcmdline tabopen -c School
