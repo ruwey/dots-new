@@ -65,12 +65,14 @@ alt + shift + d
 	rofi -run-command "gksu {cmd}" -show run
 
 # Launch Commonly Used Programs
-alt + r; {b,c,e,f,g,y}
+alt + r; {b,c,e,f,g,m,M,y}
 	{firefox,\
 	gnome-calculator,\
 	emacs,\
 	termite --name "fontpreview" -e fontpreview,\
 	eidolon menu,\
+	spotify,\
+	termite -e spt, \
 	yubioath-desktop}
 
 # }}}
