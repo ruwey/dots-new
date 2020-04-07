@@ -1,14 +1,13 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # vim:ft=i3config
-
 ### Auto Start ###
 # KDE Connect
 exec --no-startup-id /usr/lib/kdeconnectd
 exec --no-startup-id indicator-kdeconnect
 
 # Compositor Manager
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 # Set Background
 exec --no-startup-id feh --bg-fill Pictures/wallhaven-0wg61x_1920x1080.png
