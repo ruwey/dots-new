@@ -3,40 +3,40 @@
 # General {{{
 
 # Exit/restart bspwm
-alt + shift + {e,r}
+super + shift + {e,r}
 	bspc {quit,wm -r}
 
 # Close/kill window
-alt + {_,ctrl + }shift + q
+super + {_,ctrl + }shift + q
 	bspc node -{c,k}
 
 # Resize window
 # Expand window
-alt + {y,u,i,o}
+super + {y,u,i,o}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Contract window
-alt + shift + {y,u,i,o}
+super + shift + {y,u,i,o}
 	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
 
 # Change window state
-alt + {e,w,shift + space,f}
+super + {e,w,shift + space,f}
 	bspc node -t {tiled,pseudo_tiled,\~floating,\~fullscreen}
 
 # Set which way to split
-alt + ctrl + shift + {h,j,k,l}
+super + ctrl + shift + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # Set the split ratio
-alt + ctrl + shift + {1-9}
+super + ctrl + shift + {1-9}
 	bspc node -o 0.{1-9}
 
 # Cancel any preslection
-alt + Escape
+super + Escape
 	bspc node -p cancel
 
 # Toggle Flags
-alt + s; {h,s,p,l,m}
+super + s; {h,s,p,l,m}
 	bspc node -g {hidden,sticky,private,locked,marked}
 
 #}}}
@@ -44,54 +44,54 @@ alt + s; {h,s,p,l,m}
 # Movement {{{
 
 # Move focus/current node
-alt + {h,j,k,l}
+super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
 
 # Swap/move window
-alt + shift + h
+super + shift + h
 	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v -10 0; else; bspc node -s west; fi
 
-alt + shift + j
+super + shift + j
 	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v 0 10; else; bspc node -s south; fi
 
-alt + shift + k
+super + shift + k
 	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v 0 -10; else; bspc node -s north; fi
 
-alt + shift + l
+super + shift + l
 	if [ $(bspc query --tree --node | grep \"state\":\"floating\" ) ]; then; bspc node -v 10 0; else; bspc node -s east; fi
 
-alt + ctrl {h,j,k,l}
+super + ctrl {h,j,k,l}
 	move {west,south,north,east}
 
 # Switch node with biggest node
-alt + g
+super + g
 	bspc node -s biggest.local
 
 # Move between windows on current desktop
-alt + {n,p} 
+super + {n,p}
 	bspc node -f {next,prev}.local
 
 # Focus on parent/brother
-alt + t
+super + t
 	bspc node -f @parent
 
 # Switch windows cyclic
-alt + shift + {n,p}
+super + shift + {n,p}
 	bspc node -s {next,prev}.local
 
 # Cycle through floating windows
-alt + space
+super + space
 	bspc node -f next.floating.local
 
 # Focus a desktop
-alt + {1-9,0}
+super + {1-9,0}
 	bspc desktop -f {1-9,10}
 
 # Move window to desktop
-alt + shift + {1-9,0}
+super + shift + {1-9,0}
 	bspc node -d {1-9,10}
 
-alt + ctrl + {1-9,0}
+super + ctrl + {1-9,0}
 	bspc node -d {1-9,10} --follow
 
 #}}}

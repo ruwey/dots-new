@@ -22,7 +22,7 @@ XF86Audio{Prev,Play,Next}
 
 # Volume Bindings
 {%@@ if profile == "terminator" @@%}
-alt + {equal,minus}{_, + shift}
+super + {equal,minus}{_, + shift}
 {%@@ elif profile == "BigBrother" @@%}
 XF86Audio{Raise,Lower}Volume{_, + shift}
 {%@@ endif @@%}
@@ -30,14 +30,14 @@ XF86Audio{Raise,Lower}Volume{_, + shift}
 
 # Mute
 {%@@ if profile == "terminator" @@%}
-ctrl + alt + BackSpace
+ctrl + super + BackSpace
 {%@@ elif profile == "BigBrother" @@%}
 XF86AudioMute
 {%@@ endif @@%}
 	chVol mute
 
 # Change media player
-alt + m
+super + m
 	chMp
 
 #}}}
@@ -45,47 +45,51 @@ alt + m
 # Start Programs {{{
 
 # Termite (terminal)
-alt + Return
+super + Return
 	termite
 
 # Termite with tmux
-alt + shift + Return
+super + shift + Return
 	launchTmux
 
 # Start Blurlock Script
-alt {_,+ shift }+ BackSpace
+super {_,+ shift }+ BackSpace
 	blurlock {_,-s}
 
 # Rofi (App Launcher)
-alt + d
+super + d
 	rofi -show run
 
 # Rofi in superuser
-alt + shift + d
+super + shift + d
 	rofi -run-command "gksu {cmd}" -show run
 
 # Launch Commonly Used Programs
-alt + r; {b,c,e,f,g,m,M,p,P}
+super + r; {b,c,e,f,g,m,M,p,P}
 	{firefox,\
 	gnome-calculator,\
 	emacs,\
 	termite --name "fontpreview" -e fontpreview,\
 	eidolon menu,\
 	spotify,\
-	termite -e spt, \
-	passmenu, \
+	termite -e spt,\
+	passmenu,\
 	yubioath-desktop}
 
 # }}}
 
 # Reload sxhkd
-alt + ctrl + r
+super + ctrl + r
 	pkill -USR1 -x sxhkd
 
+# Description: Lol
+super + a
+	rofi -e "$(date)"
+
 # Make current window blink while holding tab button
-alt + Tab
+super + Tab
 	picom-trans -c 50 
-@alt + Tab
+@super + Tab
 	picom-trans -c 100
 
 # vim:foldmethod=marker
