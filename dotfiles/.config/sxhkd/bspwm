@@ -95,3 +95,16 @@ super + ctrl + {1-9,0}
 	bspc node -d {1-9,10} --follow
 
 #}}}
+
+# Resize window {{{
+# Incrementaly recize curent window
+super + {y,u,i,o}{_, + shift}
+	bspwm_resize {west,south,north,east} {20,40}
+
+# Set the current window split ratio
+super + alt + {1-9}
+	bspc node @parent -r 0.{1-9}
+
+super + alt{_, + shift} + 0
+	bspc node @/ -{E,B}
+#}}}
