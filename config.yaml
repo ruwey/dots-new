@@ -12,7 +12,7 @@
 #                                                #
 ##################################################
 
-# Config
+# Config {{{
 config:
   backup: false
   banner: false
@@ -23,20 +23,28 @@ config:
   import_variables:
     - colors/{{@@ colorscheme @@}}.yaml
 
-# Varaibles
+#}}}
+
+# Varaibles {{{
 variables:
   colorscheme: "Nord"
 
-# Transformations 
+#}}}
+
+# Transformations {{{
 trans_read:
   unencrypt: "gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}"
 trans_write:
   encrypt: "gpg2 --default-recipient-self --output {1} --encrypt {0}"
 
-# Actions 
+#}}}
+
+# Actions {{{
 actions:
 
-# Dotfiles 
+#}}}
+
+# Dotfiles {{{
 # The first letter indicates the type:
 # b     binding
 # d     directory
@@ -71,6 +79,9 @@ dotfiles:
     src: .scripts
     dst: ~/.scripts
     link: link
+  d_termite:
+    src: .config/termite
+    dst: ~/.config/termite
   d_tridactyl:
     src: .config/tridactyl
     dst: ~/.config/tridactyl
@@ -100,8 +111,9 @@ dotfiles:
   f_zshrc:
     src: .zshrc
     dst: ~/.zshrc
+#}}}
 
-# Profiles 
+# Profiles {{{
 profiles:
   # Desktop
   terminator:
@@ -113,6 +125,7 @@ profiles:
     - d_pictures
     - d_scripts
     - d_tridactyl
+    - d_termite
     - f_spotifyd
     - f_sxhkd
     - f_zprofile
@@ -137,3 +150,4 @@ profiles:
     - f_spotifyd
     - f_zprofile
     - f_zshrc
+#}}}

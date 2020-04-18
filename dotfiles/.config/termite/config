@@ -1,0 +1,59 @@
+[options]
+font = Anonymice Nerd Font 11
+#font = Iosevka Nerd Font 11
+#font = Hack Nerd Font 11
+
+[colors]
+#{%@@ if color == "Nord" @@%}#
+cursor = #d8dee9
+cursor_foreground = #2e3440
+
+foreground = #d8dee9
+foreground_bold = #d8dee9
+background = #2e3440
+
+highlight = #4c566a
+
+color0  = #3b4252
+color1  = #bf616a
+color2  = #a3be8c
+color3  = #ebcb8b
+color4  = #81a1c1
+color5  = #b48ead
+color6  = #88c0d0
+color7  = #e5e9f0
+color8  = #4c566a
+color9  = #bf616a
+color10 = #a3be8c
+color11 = #ebcb8b
+color12 = #81a1c1
+color13 = #b48ead
+color14 = #8fbcbb
+color15 = #eceff4
+
+#{%@@ elif color == "Mntns" @@%}#
+color0  = {{@@ color0_rgb @@}}
+color1  = {{@@ color1_rgb @@}}
+color2  = {{@@ color2_rgb @@}}
+color3  = {{@@ color3_rgb @@}}
+color4  = {{@@ color4_rgb @@}}
+color5  = {{@@ color5_rgb @@}}
+color6  = {{@@ color6_rgb @@}}
+color7  = {{@@ color7_rgb @@}}
+color8  = {{@@ color8_rgb @@}}
+color9  = {{@@ color9_rgb @@}}
+color10 = {{@@ color10_rgb @@}}
+color11 = {{@@ color11_rgb @@}}
+color12 = {{@@ color12_rgb @@}}
+color13 = {{@@ color13_rgb @@}}
+color14 = {{@@ color14_rgb @@}}
+color15 = {{@@ color15_rgb @@}}
+
+background = rgba({{@@ colorbg_rgb_plain @@}}, {{@@ color_opacity @@}})
+
+# Tests:
+# hex: {{@@ color0 @@}}
+# hex plain: {{@@ color0_hex_plain @@}}
+# rgb: {{@@ color0_rgb @@}}
+# rgb plain: {{@@ color0_rgb_plain @@}}
+#{%@@ endif @@%}#
