@@ -13,27 +13,15 @@
 # Media Keys {{{
 # Music Bindings
 
-#{%@@ if profile == "terminator" @@%}#
-F{2-4}
-#{%@@ elif profile == "BigBrother" @@%}#
 XF86Audio{Prev,Play,Next}
-#{%@@ endif @@%}#
 	playerctl -p $(cat $HOME/.local/share/mediaPlayer) {previous,play-pause,next}
 
 # Volume Bindings
-{%@@ if profile == "terminator" @@%}
-super + {equal,minus}{_, + shift}
-{%@@ elif profile == "BigBrother" @@%}
 XF86Audio{Raise,Lower}Volume{_, + shift}
-{%@@ endif @@%}
 	chVol {+,-}{5,2}%
 
 # Mute
-{%@@ if profile == "terminator" @@%}
-ctrl + super + BackSpace
-{%@@ elif profile == "BigBrother" @@%}
 XF86AudioMute
-{%@@ endif @@%}
 	chVol mute
 
 # Change media player
