@@ -143,6 +143,7 @@ profiles:
     - d_pictures
     - d_polybar
     - d_scripts
+    - d_termite
     - d_tridactyl
     - f_dircolors
     - f_eidolon

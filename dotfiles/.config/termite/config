@@ -1,5 +1,9 @@
 [options]
+#{%@@ if profile == "terminator" @@%}#
 font = Anonymice Nerd Font 11
+#{%@@ else @@%}#
+font = Anonymice Nerd Font 13
+#{%@@ endif @@%}#
 #font = Iosevka Nerd Font 11
 #font = Hack Nerd Font 11
 
