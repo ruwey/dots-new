@@ -35,7 +35,7 @@ variables:
 trans_read:
   unencrypt: "gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}"
 trans_write:
-  encrypt: "gpg2 --default-recipient-self --output {1} --encrypt {0}"
+  encrypt: "gpg2 -r CE1DB345728014562E19AEF940CBAA1DA3094BB8 --output {1} --encrypt {0}"
 
 #}}}
 
