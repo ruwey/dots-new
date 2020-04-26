@@ -94,6 +94,11 @@ dotfiles:
     src: .config/eidolon/config.json
     dst: ~/.config/eidolon/config.json
     link: link
+  f_rclone:
+    src: .config/rclone/rclone.conf
+    dst: ~/.config/rclone/rclone.conf
+    trans_read: unencrypt
+    trans_write: encrypt
   # Spotify Daemon
   f_spotifyd:
     src: .config/spotifyd/spotifyd.conf
@@ -126,6 +131,7 @@ profiles:
     - d_scripts
     - d_tridactyl
     - d_termite
+    - f_rclone
     - f_spotifyd
     - f_sxhkd
     - f_zprofile
@@ -147,6 +153,7 @@ profiles:
     - d_tridactyl
     - f_dircolors
     - f_eidolon
+    - f_rclone
     - f_sxhkd
     - f_spotifyd
     - f_zprofile
