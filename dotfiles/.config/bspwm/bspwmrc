@@ -1,7 +1,7 @@
 #!/bin/sh
 
 $HOME/.config/bspwm/autostart.sh &
-sxhkd $HOME/.config/sxhkd/bspwm &
+sxhkd $HOME/.config/bspwm/bindings &
 
 #{%@@ if profile == "terminator" @@%}#
 mons=($(xrandr | grep " connected" | awk '{ print $1 }'))

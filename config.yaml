@@ -50,9 +50,6 @@ actions:
 # d     directory
 # f     file
 dotfiles:
-  b_bspwm:
-    src: .config/sxhkd/bspwm
-    dst: ~/.config/sxhkd/bspwm
   d_awesomewm:
     src: .config/awesome
     dst: ~/.config/awesome
@@ -83,6 +80,10 @@ dotfiles:
     src: .scripts
     dst: ~/.scripts
     link: link
+  # Generic keybindings
+  d_sxhkd:
+    src: .config/sxhkd/
+    dst: ~/.config/sxhkd/
   d_termite:
     src: .config/termite
     dst: ~/.config/termite
@@ -109,10 +110,6 @@ dotfiles:
     dst: ~/.config/spotifyd/spotifyd.conf
     trans_read: unencrypt
     trans_write: encrypt
-  # Generic keybindings
-  f_sxhkd:
-    src: .config/sxhkd/sxhkdrc
-    dst: ~/.config/sxhkd/sxhkdrc
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -127,17 +124,16 @@ profiles:
   # Desktop
   terminator:
     dotfiles:
-    - b_bspwm
     - d_bspwm
     - d_i3
     - d_nvim
     - d_pictures
     - d_scripts
+    - d_sxhkd
     - d_tridactyl
     - d_termite
     - f_rclone
     - f_spotifyd
-    - f_sxhkd
     - f_zprofile
     - f_zshrc
 
@@ -147,19 +143,18 @@ profiles:
   # Laptop
   BigBrother:
     dotfiles:
-    - b_bspwm
     - d_bspwm
     - d_gnupg
     - d_nvim
     - d_pictures
     - d_polybar
     - d_scripts
+    - d_sxhkd
     - d_termite
     - d_tridactyl
     - f_dircolors
     - f_eidolon
     - f_rclone
-    - f_sxhkd
     - f_spotifyd
     - f_zprofile
     - f_zshrc
