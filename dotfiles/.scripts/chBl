@@ -1,0 +1,28 @@
+#!/bin/bash
+# chBl [percentage]
+
+# Define required variables
+BL_DIR=${2:-/sys/class/backlight/intel_backlight/}
+BL_MAX=$(cat "$BL_DIR/max_brightness")	# Maximum Brightness
+BL_NOW=$(cat "$BL_DIR/brightness")	# Current Brightness
+MSG_ID="909090"				# Message ID
+
+# Calculate New Brightness
+BL_NEW=$(echo "$BL_NOW + (($BL_MAX / 100) * ${1//+})" | bc)
+
+# Make Sure It is in Bounds
+if [ "$BL_NEW" -gt "$BL_MAX" ]; then
+	BL_NEW=$BL_MAX
+elif [ "$BL_NEW" -lt 0 ]; then
+	BL_NEW=0
+fi
+
+# Convert Brightness to Percent
+BL_PER=$(echo "scale=2; (${BL_NEW} / ${BL_MAX}) * 100" | bc)
+
+# Change Brightness
+sudo su -c "echo $BL_NEW > /sys/class/backlight/intel_backlight/brightness"
+
+# Notification
+dunstify -a "chBl" -u low -r "$MSG_ID" \
+	" Brightness: ${BL_PER//.*}%" "$(getProg 20 "▉" "-" $BL_NEW "$BL_MAX")"
