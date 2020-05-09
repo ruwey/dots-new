@@ -31,7 +31,7 @@ super + m
 # Backlight Controlls
 
 XF86MonBrightness{Up,Down}{_, + shift}
-	chBl {+,-}{5,2}
+	chBl {+,-}{10,5}
 
 #}}}
 
