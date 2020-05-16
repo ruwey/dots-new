@@ -2,17 +2,30 @@
 # gd@ruwey.com 
 
 # Startup plugins {{{
+
+# Completion {{{
 - repo: neoclide/coc.nvim
   merge: 0
   rev: release
-- repo: itchyny/lightline.vim
 - repo: honza/vim-snippets
   depends: coc.nvim
+#}}}
+
+# Ui {{{
+  #{%@@ if color == "Nord" @@%}#
   # Colorscheme
 - repo: arcticicestudio/nord-vim
+  #{%@@ endif @@%}
+  # Status Bar
+- repo: itchyny/lightline.vim
+  # Hightlight css colors
+- repo: chrisbra/Colorizer
+#}}}
+
   # Auto complete pairs (very cool)
 - repo: jiangmiao/auto-pairs
-  #}}}
+
+#}}}
 
 # Lazyloaded {{{
 
@@ -26,6 +39,7 @@
     - SSave
 - repo: haya14busa/dein-command.vim
   on_cmd: Dein
+- repo: voldikss/vim-floaterm
 #}}}
 
 # Syntax {{{
@@ -39,8 +53,6 @@
     - markdown
     - pandoc.markdown
     - rmd
-- repo: chrisbra/Colorizer
-  on_cmd: ColorHighlight
 - repo: KabbAmine/vCoolor.vim
   on_cmd: VCoolor
 #}}}
