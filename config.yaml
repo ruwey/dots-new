@@ -57,6 +57,10 @@ dotfiles:
   d_bspwm:
     src: .config/bspwm
     dst: ~/.config/bspwm
+  d_doom:
+    src: .doom.d
+    dst: ~/.doom.d
+    link: link_children
   d_gnupg:
     src: .gnupg
     dst: ~/.gnupg
@@ -144,6 +148,7 @@ profiles:
   BigBrother:
     dotfiles:
     - d_bspwm
+    - d_doom
     - d_gnupg
     - d_nvim
     - d_pictures
