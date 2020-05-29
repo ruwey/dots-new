@@ -59,7 +59,7 @@ super + shift + d
 
 # Launch Commonly Used Programs
 super + r; {b,c,e,f,g,m,M,p,P}
-	{firefox,\
+	{qutebrowser,\
 	gnome-calculator,\
 	emacs,\
 	termite --name "fontpreview" -e fontpreview,\

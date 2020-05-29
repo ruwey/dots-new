@@ -80,6 +80,10 @@ dotfiles:
     src: .config/polybar
     dst: ~/.config/polybar
     link: link_children
+  d_qutebrowser:
+    src: .config/qutebrowser
+    dst: ~/.config/qutebrowser
+    link: link
   d_scripts:
     src: .scripts
     dst: ~/.scripts
@@ -136,6 +140,7 @@ profiles:
     - d_i3
     - d_nvim
     - d_pictures
+    - d_qutebrowser
     - d_scripts
     - d_sxhkd
     - d_tridactyl
