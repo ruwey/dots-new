@@ -18,6 +18,9 @@ export d=$HOME/.dotdrop/dotfiles
 # Add automound shortcut
 export atmt=/run/media/ruwey
 
+# Add school shortcut
+export s=$HOME/Documents/School
+
 # FZF default command
 export FZF_DEFAULT_COMMAND="find ."
 
