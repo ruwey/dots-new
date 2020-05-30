@@ -83,7 +83,7 @@ dotfiles:
   d_qutebrowser:
     src: .config/qutebrowser
     dst: ~/.config/qutebrowser
-    link: link
+    link: link_children
   d_scripts:
     src: .scripts
     dst: ~/.scripts

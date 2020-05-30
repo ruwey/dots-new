@@ -1,0 +1,35 @@
+# Qutebrowser Config
+# Ruwey (ruwey.com)
+
+# Keybindings {{{
+binds:
+  normal:
+    <Ctrl+Shift+f>: spawn --user qute-pass
+    <Ctrl+j>: tab-move -
+    <Ctrl+k>: tab-move +
+    J: tab-prev
+    K: tab-next
+    d: null
+    dd: tab-close
+    po: open -p
+    zf: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret'
+    zi: zoom-in
+    zo: zoom-out
+    zp: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret --password-only'
+    zu: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret --username-only'
+    zvo: spawn -u view_in_mpv
+    zz: zoom
+# }}}
+
+# Settings {{{
+settings:
+  global:
+    spellcheck.languages:
+      - en-US
+  reddit.com:
+    # Fix comments not loading on reddit. (Ads are unblock-able anyway)
+    content.blocking.adblock.enabled: false
+# }}}
