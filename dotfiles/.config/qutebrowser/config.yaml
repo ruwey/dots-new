@@ -29,7 +29,11 @@ settings:
   global:
     spellcheck.languages:
       - en-US
-  reddit.com:
+    url.searchengines:
+      DEFAULT: "https://duckduckgo.com/?q={}" # Default Search Engine: DuckDuckGO
+      gh: "https://github.com/search?q={}" # Github
+      yt: "https://www.youtube.com/results?search_query={}" # Youtube
+  "*://reddit.com/":
     # Fix comments not loading on reddit. (Ads are unblock-able anyway)
     content.blocking.adblock.enabled: false
 # }}}

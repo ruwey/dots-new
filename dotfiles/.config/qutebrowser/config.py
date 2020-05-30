@@ -11,26 +11,16 @@ import yaml
 with open(config.configdir / 'config.yaml') as f:
     yaml_cfg = yaml.load(f, Loader=yaml.FullLoader)
 
-
-# This function recursively gets . separated paths from nested yaml
-def dict_attrs(obj, path=''):
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            yield from dict_attrs(v, '{}.{}'.format(path, k) if path else k)
-    else:
-        yield path, obj
-
-
 # The main script that parses the file
 for type, content in yaml_cfg.items():
     if type == "settings":  # Declarative Settings
         for scope, content in content.items():
             # This loop separates global settings with site specific ones
             if scope == "global":
-                for item, value in dict_attrs(content):
+                for item, value in content.items():
                     config.set(item, value)
             else:
-                for item, value in dict_attrs(content):
+                for item, value in content.items():
                     config.set(item, value, scope)
     if type == "binds":  # Key Bindings
         for mode, content in content.items():
