@@ -13,16 +13,16 @@ with open(config.configdir / 'config.yaml') as f:
 
 # The main script that parses the file
 for type, content in yaml_cfg.items():
-    if type == "settings":  # Declarative Settings
+    if type.lower() == "settings":  # Declarative Settings
         for scope, content in content.items():
             # This loop separates global settings with site specific ones
-            if scope == "global":
+            if scope.lower() == "global":
                 for item, value in content.items():
                     config.set(item, value)
             else:
                 for item, value in content.items():
                     config.set(item, value, scope)
-    if type == "binds":  # Key Bindings
+    if type.lower() == "binds":  # Key Bindings
         for mode, content in content.items():
             # This loop only exists to declare the mode of the binding
             for key, action in content.items():
