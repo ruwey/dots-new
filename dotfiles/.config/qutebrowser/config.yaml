@@ -11,17 +11,21 @@ binds:
     K: tab-next
     d: null
     dd: tab-close
-    po: open -p
-    zf: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret'
+    po: set-cmd-text -s :open -p
     zi: zoom-in
     zo: zoom-out
-    zp: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --password-only'
-    zu: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --username-only'
     zvo: spawn -u view_in_mpv
     zz: zoom
+    # Toggle Ad Blocking
+    ",ta": config-cycle content.blocking.adblock.enabled
+    ",tb": config-cycle tabs.show never always
+    ",ts": config-cycle statusbar.hide
+    ",ff": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret'
+    ",fp": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret --password-only'
+    ",fu": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret --username-only'
 # }}}
 
 # Settings {{{
@@ -33,7 +37,12 @@ settings:
       DEFAULT: "https://duckduckgo.com/?q={}" # Default Search Engine: DuckDuckGO
       gh: "https://github.com/search?q={}" # Github
       yt: "https://www.youtube.com/results?search_query={}" # Youtube
-  "*://reddit.com/":
+      protondb: "https://www.protondb.com/search?q={}"
+      wirecutter: "https://www.nytimes.com/wirecutter/search/?s={}"
+    content.notifications: false
+  "*://www.reddit.com/*":
     # Fix comments not loading on reddit. (Ads are unblock-able anyway)
     content.blocking.adblock.enabled: false
 # }}}
+
+# sup
