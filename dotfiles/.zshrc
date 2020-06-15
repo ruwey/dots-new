@@ -164,6 +164,16 @@ alias scdl="youtube-dl --embed-thumbnail -f mp3 -i --add-metadata"
 
 # Link to Qmk Firmware from git
 alias qmk="~/Programs/qmk_firmware/bin/qmk"
+
+# XBPS stuff
+alias xbi="sudo xbps-install"	# Install
+alias xbq="xbps-query"		# Query
+alias xbs="xbps-query -Rs"	# Search
+alias xbr="sudo xbps-remove"	# Remove
+
+# Free Space
+alias space="lsblk --output NAME,MOUNTPOINT,FSSIZE,FSUSED,FSUSE%"
+
 # }}}
 
 # vim:foldmethod=marker
