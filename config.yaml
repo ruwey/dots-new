@@ -154,7 +154,7 @@ profiles:
       colorscheme: "Mntns"
 
   # Laptop
-  BigBrother:
+  bigbrother:
     dotfiles:
     - d_bspwm
     - d_doom
@@ -162,6 +162,7 @@ profiles:
     - d_nvim
     - d_pictures
     - d_polybar
+    - d_qutebrowser
     - d_scripts
     - d_spicetify
     - d_sxhkd
