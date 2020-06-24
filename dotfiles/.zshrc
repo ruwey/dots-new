@@ -186,4 +186,15 @@ alias space="lsblk --output NAME,MOUNTPOINT,FSSIZE,FSUSED,FSUSE%"
 
 # }}}
 
+# Directory Shortcuts {{{
+# Add school shortcut
+hash -d -- s=$HOME/Documents/School
+
+# Add dotfile shortcut
+hash -d -- d=$HOME/.dotdrop/dotfiles
+
+# Add automound shortcut
+hash -d -- atmt=/run/media/ruwey
+#}}}
+
 # vim:foldmethod=marker
