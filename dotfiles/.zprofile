@@ -26,11 +26,3 @@ export FZF_DEFAULT_COMMAND="find ."
 
 # Set dircolors
 eval $(dircolors ~/.dir_colors)
-
-# Start ssh-agent
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
-fi
