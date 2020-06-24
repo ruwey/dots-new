@@ -37,6 +37,7 @@ settings:
       DEFAULT: "https://duckduckgo.com/?q={}" # Default Search Engine: DuckDuckGO
       gh: "https://github.com/search?q={}" # Github
       yt: "https://www.youtube.com/results?search_query={}" # Youtube
+      aur: "https://aur.archlinux.org/packages/?O=0&K={}"
       protondb: "https://www.protondb.com/search?q={}"
       wirecutter: "https://www.nytimes.com/wirecutter/search/?s={}"
     content.notifications: false
