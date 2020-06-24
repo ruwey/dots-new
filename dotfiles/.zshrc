@@ -75,6 +75,9 @@ bindkey -v '^?' backward-delete-char
 
 bindkey '^R' history-incremental-pattern-search-backward
 
+# Bind ctrl + f to autosuggestions
+bindkey '^f' autosuggest-accept
+
 # PowerLine 10K (Prompt) {{{
 # Config
 # Don't give me annoying config dialog
@@ -145,10 +148,6 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 #}}}
 
 # Aliases {{{
-
-# Bind ctrl + f to autosuggestions
-bindkey '^f' autosuggest-accept
-
 # Dot Files Git
 alias cfg='git --work-tree=$HOME/.dot --git-dir=$HOME/.dot/.git'
 
@@ -184,6 +183,8 @@ alias xbr="sudo xbps-remove"	# Remove
 # Free Space
 alias space="lsblk --output NAME,MOUNTPOINT,FSSIZE,FSUSED,FSUSE%"
 
+# Bluetoothctl
+alias btc="bluetoothctl"
 # }}}
 
 # Directory Shortcuts {{{
