@@ -48,6 +48,9 @@ zinit light zdharma/fast-syntax-highlighting
 # Fish like autosuggestions
 zinit ice wait'!1' atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
+
+# Dynamic term title
+zinit light trystan2k/zsh-tab-title
 # }}}
 
 # Configuration {{{ 

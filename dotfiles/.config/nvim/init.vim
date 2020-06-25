@@ -56,6 +56,8 @@ set nowrap
 " Disable default insert text as lightline makes it redundant
 set noshowmode
 
+" Add Dynamic Title
+set title
 "{%@@ if colorscheme == "Nord" @@%}"
 " Change Lightline Separator
 let g:lightline.separator = { 'left': '', 'right': '' }
