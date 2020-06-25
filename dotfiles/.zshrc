@@ -81,6 +81,9 @@ bindkey '^R' history-incremental-pattern-search-backward
 # Bind ctrl + f to autosuggestions
 bindkey '^f' autosuggest-accept
 
+# key chord jk is escape like in vim
+bindkey -s jk '\e'
+
 # PowerLine 10K (Prompt) {{{
 # Config
 # Don't give me annoying config dialog
