@@ -44,6 +44,7 @@ settings:
       protondb: "https://www.protondb.com/search?q={}"
       wirecutter: "https://www.nytimes.com/wirecutter/search/?s={}"
     content.notifications: false
+    auto_save.session: true
   "*://www.reddit.com/*":
     # Fix comments not loading on reddit. (Ads are unblock-able anyway)
     content.blocking.adblock.enabled: false
