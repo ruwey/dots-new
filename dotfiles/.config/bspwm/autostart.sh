@@ -2,7 +2,7 @@
 # Composite Manager
 #{%@@ if profile == "terminator" @@%}#
 picom --experimental-backend &
-#{%@@ elif profile == "BigBrother" @@%}#
+#{%@@ elif profile == "bigbrother" @@%}#
 picom &
 #{%@@ endif @@%}#
 
