@@ -45,6 +45,7 @@ actions:
     install-dein: test -e ~/.config/nvim/dein || (curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/dein-installer.sh; sh /tmp/dein-installer.sh ~/.config/nvim/dein) 
   post:
     install-zinit: test -e ~/.zinit || (sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)")
+    install-doom: test -e ~/.emacs.d || (git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d; ~/.emacs.d/bin/doom install)
 
 #}}}
 
@@ -65,6 +66,8 @@ dotfiles:
     src: .doom.d
     dst: ~/.doom.d
     link: link_children
+    actions:
+      - install-doom
   d_gnupg:
     src: .gnupg
     dst: ~/.gnupg
