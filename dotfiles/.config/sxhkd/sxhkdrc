@@ -58,7 +58,7 @@ super + shift + d
 	rofi -run-command "gksu {cmd}" -show run
 
 # Launch Commonly Used Programs
-super + r; {b,c,e,f,g,m,M,p,P}
+super + r; {b,c,e,f,g,m,M,p,P,s}
 	{qutebrowser,\
 	gnome-calculator,\
 	emacs,\
@@ -67,7 +67,8 @@ super + r; {b,c,e,f,g,m,M,p,P}
 	spotify,\
 	termite -e spt,\
 	passmenu,\
-	yubioath-desktop}
+	yubioath-desktop,
+	steam}
 
 # }}}
 
