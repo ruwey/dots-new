@@ -14,7 +14,6 @@ binds:
     po: set-cmd-text -s :open -p
     zi: zoom-in
     zo: zoom-out
-    zvo: spawn -u view_in_mpv
     zz: zoom
     # Toggle Ad Blocking
     ",ta": config-cycle content.blocking.adblock.enabled
@@ -26,6 +25,7 @@ binds:
     --username-target secret --password-only'
     ",fu": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
     --username-target secret --username-only'
+    ",vo": spawn -u view_in_mpv
 # }}}
 
 # Settings {{{
