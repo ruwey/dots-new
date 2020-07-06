@@ -9,10 +9,6 @@ picom &
 # Notification Manager
 dunst &
 
-# KDE Connect
-/usr/lib/kdeconnectd &
-indicator-kdeconnect &
-
 # Set Background
 #{%@@ if colorscheme == "Nord" @@%}#
 xwallpaper --zoom $HOME/Pictures/ColdSpace.jpg &
