@@ -112,6 +112,9 @@ dotfiles:
     src: .config/tridactyl
     dst: ~/.config/tridactyl
     link: link_children
+  f_autostart:
+    src: .config/autostart.sh
+    dst: ~/.config/autostart.sh
   f_dircolors:
     src: .dir_colors
     dst: ~/.dir_colors
@@ -181,6 +184,7 @@ profiles:
     - d_sxhkd
     - d_termite
     - d_tridactyl
+    - f_autostart
     - f_dircolors
     - f_eidolon
     - f_rclone

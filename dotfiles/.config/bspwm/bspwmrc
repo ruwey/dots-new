@@ -1,6 +1,6 @@
 #!/bin/sh
 
-$HOME/.config/bspwm/autostart.sh &
+$HOME/.config/autostart.sh &
 sxhkd $HOME/.config/bspwm/bindings &
 
 #{%@@ if profile == "terminator" @@%}#
