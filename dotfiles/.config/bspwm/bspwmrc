@@ -1,7 +1,13 @@
 #!/bin/sh
 
 $HOME/.config/autostart.sh &
+
 sxhkd $HOME/.config/bspwm/bindings &
+
+# Polybar (bar)
+#{%@@ if colorscheme == "Nord" @@%}#
+$HOME/.config/polybar/launch.sh &
+#{%@@ endif @@%}#
 
 #{%@@ if profile == "terminator" @@%}#
 mons=($(xrandr | grep " connected" | awk '{ print $1 }'))
