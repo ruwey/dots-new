@@ -5,7 +5,7 @@
 # The notification id for dunst
 msgId="990099"
 # The sink to use
-sink="$(pacmd stat | grep "Default sink" | awk '{print $4}')"
+sink="$(pactl info | grep "Default Sink" | cut -d' ' -f3)"
 
 # Actually change volume
 if [[ $@ = 'mute' ]]; then
