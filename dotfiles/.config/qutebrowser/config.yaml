@@ -18,7 +18,7 @@ binds:
     # Toggle Ad Blocking
     ",ta": config-cycle content.blocking.adblock.enabled
     ",tb": config-cycle tabs.show never always
-    ",ts": config-cycle statusbar.hide
+    ",ts": config-cycle statusbar.show never always
     ",ff": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
     --username-target secret'
     ",fp": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
@@ -26,6 +26,8 @@ binds:
     ",fu": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
     --username-target secret --username-only'
     ",vo": spawn -u view_in_mpv
+  insert:
+    <Ctrl+e>: null
 # }}}
 
 # Settings {{{
