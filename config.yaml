@@ -65,7 +65,6 @@ dotfiles:
   d_doom:
     src: .doom.d
     dst: ~/.doom.d
-    link: link_children
     actions:
       - install-doom
   d_gnupg:
@@ -153,6 +152,7 @@ profiles:
   terminator:
     dotfiles:
     - d_bspwm
+    - d_doom
     - d_i3
     - d_nvim
     - d_pictures
