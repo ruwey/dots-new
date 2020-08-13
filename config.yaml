@@ -161,6 +161,7 @@ profiles:
     - d_sxhkd
     - d_tridactyl
     - d_termite
+    - f_autostart
     - f_rclone
     - f_spotifyd
     - f_zprofile
