@@ -1,10 +1,6 @@
 # Autostart
 # Composite Manager
-#{%@@ if profile == "terminator" @@%}#
-picom --experimental-backend &
-#{%@@ elif profile == "bigbrother" @@%}#
 picom &
-#{%@@ endif @@%}#
 
 # Notification Manager
 dunst &
