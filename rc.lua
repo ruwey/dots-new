@@ -370,7 +370,13 @@ globalkeys = gears.table.join(
 		{description = "mute", group = "media"}),
 	awful.key({                   }, "XF86AudioPlay",
 		function() awful.spawn.with_shell("playerctl -p $(cat $HOME/.local/share/mediaPlayer) play-pause") end,
-		{description = "Toggle Music", group = "media"})
+		{description = "Toggle Music", group = "media"}),
+	awful.key({                   }, "XF86AudioNext",
+		function() awful.spawn.with_shell("playerctl -p $(cat $HOME/.local/share/mediaPlayer) next") end,
+		{description = "Next Song", group = "media"}),
+	awful.key({                   }, "XF86AudioPrev",
+		function() awful.spawn.with_shell("playerctl -p $(cat $HOME/.local/share/mediaPlayer) previous") end,
+		{description = "Previous Song", group = "media"})
 )
 
 clientkeys = gears.table.join(
