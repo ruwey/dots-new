@@ -114,9 +114,14 @@ augroup yaml
 	autocmd FileType yaml set tabstop=2 shiftwidth=2
 augroup END
 
-augroup yaml
+augroup json
 	autocmd!
 	autocmd FileType json set tabstop=2 shiftwidth=2
+augroup END
+
+augroup lua
+	autocmd!
+	autocmd FileType lua set tabstop=4 shiftwidth=4
 augroup END
 
 " Startup
