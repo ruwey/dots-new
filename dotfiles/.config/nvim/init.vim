@@ -114,6 +114,11 @@ augroup yaml
 	autocmd FileType yaml set tabstop=2 shiftwidth=2
 augroup END
 
+augroup yaml
+	autocmd!
+	autocmd FileType json set tabstop=2 shiftwidth=2
+augroup END
+
 " Startup
 autocmd VimEnter *
 	\ if !argc() 
