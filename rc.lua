@@ -113,7 +113,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock(" %l:%M %p ")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -237,7 +237,7 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "y", function() naughty.notify({ title="[[<b>This is a test.</b>;\nHi]]" }) end,
               { description="notify test", group="test" }),
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey,           }, "/",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -398,6 +398,8 @@ clientkeys = gears.table.join(
               {description = "move to previous screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
+    awful.key({ modkey,           }, "s",      function (c) c.sticky = not c.sticky            end,
+              {description = "toggle sticky", group = "client"}),
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -541,10 +543,23 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
+    { rule_any = {name = "Picture-in-Picture"},
+      properties = {
+        sticky = true,
+		floating = true,
+		ontop = true
+      }
+    },
+
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
     },
+
+    -- Remove Firefox Titlebar
+    --{ rule_any = { class = {"Firefox", "Nightly"} },
+    --    properties = { titlebars_enabled = false }
+    --},
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
@@ -616,9 +631,9 @@ client.connect_signal("request::titlebars", function(c)
 			buttons = buttons
 		},
 		{
-			awful.titlebar.widget.maximizedbutton	(c),
 			awful.titlebar.widget.minimizebutton	(c),
-			awful.titlebar.widget.closebutton		(c),
+			awful.titlebar.widget.maximizedbutton	(c),
+			awful.titlebar.widget.closebutton	(c),
 			layout = wibox.layout.fixed.horizontal
 		},
 		layout = wibox.layout.align.horizontal
