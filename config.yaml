@@ -133,6 +133,9 @@ dotfiles:
     dst: ~/.config/spotifyd/spotifyd.conf
     trans_read: unencrypt
     trans_write: encrypt
+  f_xinitrc:
+    src: .xinitrc
+    dst: ~/.xinitrc
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -190,6 +193,7 @@ profiles:
     - f_eidolon
     - f_rclone
     - f_spotifyd
+    - f_xinitrc
     - f_zprofile
     - f_zshrc
 #}}}

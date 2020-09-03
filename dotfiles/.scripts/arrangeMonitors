@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mapfile -t MONS < <(  xrandr --listmonitors | tail -n +2 | awk '{ gsub("[*+]",""); print $2}' )
+if [ ${#MONS[@]} -eq 2 ]; then
+	xrandr --output ${MONS[0]} --auto --left-of ${MONS[1]}
+fi
