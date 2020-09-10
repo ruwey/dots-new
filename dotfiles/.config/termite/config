@@ -2,7 +2,7 @@
 #{%@@ if profile == "terminator" @@%}#
 font = Cozette
 #{%@@ else @@%}#
-font = Iosevka 12
+font = Iosevka Ruwey 12
 #{%@@ endif @@%}#
 #font = Iosevka Nerd Font 11
 #font = Hack Nerd Font 11
