@@ -75,6 +75,10 @@ dotfiles:
     src: .config/i3
     dst: ~/.config/i3
     link: link_children
+  d_iosevka:
+    src: .local/share/fonts/iosevka-ruwey
+    dst: ~/.local/share/fonts/iosevka-ruwey
+    link: link
   d_nvim:
     src: .config/nvim
     dst: ~/.config/nvim
@@ -179,6 +183,7 @@ profiles:
     - d_bspwm
     - d_doom
     - d_gnupg
+    - d_iosevka
     - d_nvim
     - d_pictures
     - d_polybar
