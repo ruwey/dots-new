@@ -9,7 +9,8 @@ helpers.progress = function(percent, total)
 
 	bar = ""
 	for i = 1, full do
-		bar = bar .. '▉'
+		bar = bar .. '▮'
+		-- ▉
 	end
 
 	for i = 1, empty do
@@ -19,16 +20,16 @@ helpers.progress = function(percent, total)
 	return bar
 end
 
--- Auto-Updating Notifications from: 
+-- Auto-Updating Notifications adapted from: 
 -- https://github.com/elenapan/dotfiles/blob/master/config/awesome/notifications/init.lua
 function helpers.notify(args, notif)
     local n = notif
     if n and not n._private.is_destroyed and not n.is_expired then
-        notif.title = args.title or notif.title
-        notif.message = args.message or notif.message
+        notif.title = args.title
+        notif.message = args.message 
         -- notif.text = args.text or notif.text
-        notif.icon = args.icon or notif.icon
-        notif.timeout = args.timeout or notif.timeout
+        notif.icon = args.icon
+        notif.timeout = args.timeout
     else
         n = naughty.notification(args)
     end
