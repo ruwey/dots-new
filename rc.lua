@@ -345,7 +345,20 @@ globalkeys = gears.table.join(
 	awful.key({ modkey, "Control" }, "BackSpace",
 		function() awful.spawn.with_shell("blurlock -h") end,
 		{description = "lock the screen and hibernate", group = "power"}),
+	-- Backlight
+	awful.key({                   }, "XF86MonBrightnessUp",
+		function() awful.spawn.with_shell("chBl +5") end,
+		{description = "lower brightness 5%", group = "backlight"}),
+	awful.key({                   }, "XF86MonBrightnessDown",
+		function() awful.spawn.with_shell("chBl -5") end,
+		{description = "raise brightness 5%", group = "backlight"}),
 	-- Media Keys
+	awful.key({ modkey            }, "m",
+		function() awful.spawn.with_shell("chMp") end,
+		{description = "change media player", group = "media"}),
+	awful.key({ modkey, "Shift"   }, "m",
+		function() awful.spawn.with_shell("chSink") end,
+		{description = "change default sink", group = "media"}),
 	awful.key({                   }, "XF86AudioRaiseVolume",
 		function()
 			awful.spawn.easy_async_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%",
@@ -414,25 +427,7 @@ clientkeys = gears.table.join(
             -- minimized, since minimized clients can't have the focus.
             c.minimized = true
         end ,
-        {description = "minimize", group = "client"}),
-    awful.key({ modkey,           }, "m",
-        function (c)
-            c.maximized = not c.maximized
-            c:raise()
-        end ,
-        {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "m",
-        function (c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
-        end ,
-        {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        {description = "minimize", group = "client"})
 )
 
 -- Bind all key numbers to tags.
