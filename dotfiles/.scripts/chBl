@@ -24,5 +24,9 @@ BL_PER=$(echo "scale=2; (${BL_NEW} / ${BL_MAX}) * 100" | bc)
 sudo su -c "echo $BL_NEW > /sys/class/backlight/intel_backlight/brightness"
 
 # Notification
-dunstify -a "chBl" -u low -r "$MSG_ID" \
-	" Brightness: ${BL_PER//.*}%" "$(getProg 20 "▉" "-" $BL_NEW "$BL_MAX")"
+if pgrep -x awesome; then
+	$HOME/.config/awesome/notify.sh "Brightness" "$(getProg 20 "▉" "-" $BL_NEW "$BL_MAX")" $HOME/.config/awesome/baseline_brightness_low_black_24dp.png 2 update
+else
+	dunstify -a "chBl" -u low -r "$MSG_ID" \
+		" Brightness: ${BL_PER//.*}%" "$(getProg 20 "▉" "-" $BL_NEW "$BL_MAX")"
+fi
