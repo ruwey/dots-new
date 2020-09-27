@@ -46,6 +46,7 @@ actions:
   post:
     install-zinit: test -e ~/.zinit || (sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)")
     install-doom: test -e ~/.emacs.d || (git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d; ~/.emacs.d/bin/doom install)
+    install-cron: crontab ~/.config/crontab
 
 #}}}
 
@@ -118,6 +119,11 @@ dotfiles:
   f_autostart:
     src: .config/autostart.sh
     dst: ~/.config/autostart.sh
+  f_crontab:
+    src: .config/crontab
+    dst: ~/.config/crontab
+    actions:
+      - install-cron
   f_dircolors:
     src: .dir_colors
     dst: ~/.dir_colors
@@ -194,6 +200,7 @@ profiles:
     - d_termite
     - d_tridactyl
     - f_autostart
+    - f_crontab
     - f_dircolors
     - f_eidolon
     - f_rclone
