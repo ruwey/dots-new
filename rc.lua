@@ -624,19 +624,20 @@ client.connect_signal("request::titlebars", function(c)
     --    },
     --    layout = wibox.layout.align.horizontal
     --}
-	awful.titlebar(c) : setup {
+	awful.titlebar(c, {size = 25}) : setup {
 		{
 			widget = wibox.widget.textbox,
 			buttons = buttons
 		},
 		{
-			widget = wibox.widget.textbox,
+			widget = awful.titlebar.widget.titlewidget(c),
+			align = "center",
 			buttons = buttons
 		},
 		{
-			awful.titlebar.widget.minimizebutton	(c),
 			awful.titlebar.widget.maximizedbutton	(c),
-			awful.titlebar.widget.closebutton	(c),
+			awful.titlebar.widget.minimizebutton	(c),
+			awful.titlebar.widget.closebutton		(c),
 			layout = wibox.layout.fixed.horizontal
 		},
 		layout = wibox.layout.align.horizontal
