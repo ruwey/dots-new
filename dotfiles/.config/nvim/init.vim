@@ -136,7 +136,7 @@ autocmd VimEnter *
 let mapleader = " "
 
 " Browse files
-nnoremap <leader>. :File <CR>
+nnoremap <leader>. :Files <CR>
 
 " Open vimrc in a split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>

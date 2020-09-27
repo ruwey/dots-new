@@ -48,7 +48,7 @@
 - repo: nvie/vim-ini
   on_ft: dosini
 - repo: iamcco/markdown-preview.nvim
-  hook_post_source: mkdp#util#install()
+  hook_post_source: call mkdp#util#install()
   on_ft:
     - markdown
     - pandoc.markdown
@@ -63,13 +63,13 @@
   on_cmd: Defx
 
 # File Search with fzf
-- repo: https://github.com/junegunn/fzf.git
+- repo: https://github.com/junegunn/fzf
   build: './install --all'
   merged: 0
   on_cmd: FZF
 
-- repo: https://github.com/junegunn/fzf.vim.git
-  depends: fzf.git
+- repo: https://github.com/junegunn/fzf.vim
+  depends: fzf
   on_cmd: 
     - Files
     - GFiles
@@ -79,8 +79,8 @@
 #}}}
 
 # Git {{{
-- repo: jreybert/vimagit
-  on_cmd: Magit
+- repo: tpope/vim-fugitive
+  on_cmd: [ 'G', 'Git' ]
 # }}}
 
 # }}}
