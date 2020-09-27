@@ -51,7 +51,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/nord/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
@@ -233,8 +233,6 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "y", function() naughty.notify({ title="[[<b>This is a test.</b>;\nHi]]" }) end,
-              { description="notify test", group="test" }),
     awful.key({ modkey,           }, "/",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
