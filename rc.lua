@@ -266,8 +266,6 @@ globalkeys = gears.table.join(
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey,           }, ".", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
-              {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
@@ -420,8 +418,16 @@ clientkeys = gears.table.join(
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
-    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
-              {description = "move to master", group = "client"}),
+    awful.key({ modkey,           }, "space",
+		function (c)
+			if awful.client.urgent.get() then
+				awful.client.urgent.jumpto()
+				naughty.notification ({title="sup"})
+			else
+				c:swap(awful.client.getmaster())
+			end
+		end,
+    	{description = "move to urgent or master", group = "client"}),
     awful.key({ modkey, "Shift"   }, ",",      function (c) c:move_to_screen(c.screen.index+1) end,
               {description = "move to next screen", group = "client"}),
     awful.key({ modkey, "Shift"   }, ".",      function (c) c:move_to_screen(c.screen.index-1) end,
