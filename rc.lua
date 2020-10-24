@@ -404,7 +404,15 @@ globalkeys = gears.table.join(
 		{description = "Next Song", group = "media"}),
 	awful.key({                   }, "XF86AudioPrev",
 		function() awful.spawn.with_shell("playerctl -p $(cat $HOME/.local/share/mediaPlayer) previous") end,
-		{description = "Previous Song", group = "media"})
+		{description = "Previous Song", group = "media"}),
+
+	-- Passwords
+	awful.key({ modkey,           }, "p",
+		function() awful.spawn.with_shell("passmenu") end,
+		{description = "Pass menu", group = "passwords"}),
+	awful.key({ modkey, "Shift"   }, "p",
+		function() awful.spawn.with_shell("ykOath") end,
+		{description = "Yubico OATH Menu", group = "passwords"})
 )
 
 clientkeys = gears.table.join(
