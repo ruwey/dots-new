@@ -1,0 +1,23 @@
+#!/bin/sh
+# Power Menu Script
+
+# Get what user wants to do
+action=$(echo -e "Power Down\nReboot\nSuspend\nHibernate\nLock" | dmenu -i)
+
+case $action in
+	"Power Down")
+		loginctl poweroff
+		;;
+	"Reboot")
+		loginctl reboot
+		;;
+	"Suspend")
+		blurlock -s
+		;;
+	"Hibernate")
+		blurlock -h
+		;;
+	"Lock")
+		blurlock
+		;;
+esac
