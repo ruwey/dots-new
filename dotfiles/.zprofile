@@ -17,3 +17,6 @@ export FZF_DEFAULT_COMMAND="find ."
 
 # Set dircolors
 eval $(dircolors ~/.dir_colors)
+
+# Start DBus session and record address
+eval $(dbus-launch --sh-syntax)
