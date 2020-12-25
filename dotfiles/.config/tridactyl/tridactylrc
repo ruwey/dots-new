@@ -8,10 +8,6 @@ set searchurls.aur		https://aur.archlinux.org/packages/?O=0&K=
 set searchurls.awki		https://wiki.archlinux.org/index.php?search=
 set searchurls.cnh		http://www.chinesehideout.com/tools/strokeorder/index.php?c=
 
-" Change tabclose to x
-bind x tabclose
-unbind d
-
 " Make custom nvim as editor
 set editorcmd termite --name browserEditor -e "nvim %f -c 'normal %lG%cl'"
 
@@ -28,3 +24,22 @@ bind I current_url winopen -private
 " Set school byndings
 bind s fillcmdline tabopen -c School
 bind S current_url tabopen -c School
+
+" Unbind F1 for tree style tabs
+unbind <F1>
+
+" Switch JK to work with virtical tabs
+bind J tabnext
+bind K tabprev
+
+" Reddit:
+bind --mode=reddit J tabnext
+bind --mode=reddit K tabprev
+bind --mode=reddit H back
+bind --mode=reddit L forward
+bind --mode=reddit d tabclose
+bind --mode=reddit : fillcmdline_notrail
+bind --mode=reddit <CA-Escape> mode normal
+bindurl ^http(s?)://www.reddit.com --mode=insert <Escape> composite unfocus | mode reddit
+
+autocmd DocStart ^http(s?)://www.reddit.com mode reddit
