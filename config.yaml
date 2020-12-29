@@ -56,10 +56,6 @@ actions:
 # d     directory
 # f     file
 dotfiles:
-  d_awesomewm:
-    src: .config/awesome
-    dst: ~/.config/awesome
-    link: link_children
   d_bspwm:
     src: .config/bspwm
     dst: ~/.config/bspwm
