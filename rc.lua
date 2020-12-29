@@ -344,14 +344,11 @@ globalkeys = gears.table.join(
 	-- Launcher
 	-- Power Buttons
 	awful.key({ modkey            }, "BackSpace",
+		function() awful.spawn.with_shell("powerMenu") end,
+		{description = "open power menu", group = "power"}),
+	awful.key({ modkey, "Shift"   }, "BackSpace",
 		function() awful.spawn.with_shell("blurlock") end,
 		{description = "lock the screen", group = "power"}),
-	awful.key({ modkey, "Shift"   }, "BackSpace",
-		function() awful.spawn.with_shell("blurlock -s") end,
-		{description = "lock the screen and suspend", group = "power"}),
-	awful.key({ modkey, "Control" }, "BackSpace",
-		function() awful.spawn.with_shell("blurlock -h") end,
-		{description = "lock the screen and hibernate", group = "power"}),
 	-- Backlight
 	awful.key({                   }, "XF86MonBrightnessUp",
 		function() awful.spawn.with_shell("chBl +5") end,
