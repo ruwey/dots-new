@@ -56,6 +56,10 @@ actions:
 # d     directory
 # f     file
 dotfiles:
+  d_awesome:
+    src: .config/awesome
+    dst: ~/.config/awesome
+    link: link_children
   d_bspwm:
     src: .config/bspwm
     dst: ~/.config/bspwm
@@ -182,6 +186,7 @@ profiles:
   # Laptop
   bigbrother:
     dotfiles:
+    - d_awesome
     - d_bspwm
     - d_doom
     - d_gnupg
