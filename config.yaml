@@ -146,6 +146,10 @@ dotfiles:
   f_xinitrc:
     src: .xinitrc
     dst: ~/.xinitrc
+  f_zlogout:
+    src: .zlogout
+    dst: ~/.zlogout
+    link: link
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
@@ -177,6 +181,7 @@ profiles:
     - f_autostart
     - f_rclone
     - f_spotifyd
+    - f_zlogout
     - f_zprofile
     - f_zshrc
 
@@ -207,6 +212,7 @@ profiles:
     - f_rclone
     - f_spotifyd
     - f_xinitrc
+    - f_zlogout
     - f_zprofile
     - f_zshrc
 #}}}
