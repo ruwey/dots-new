@@ -1,1 +1,1 @@
-pkill pulseaudio
+pulseaudio --kill
