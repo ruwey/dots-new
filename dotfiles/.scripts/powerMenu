@@ -2,7 +2,7 @@
 # Power Menu Script
 
 # Get what user wants to do
-action=$(echo -e "Power Down\nReboot\nSuspend\nHibernate\nLock" | dmenu)
+action=$(echo -e "Power Down\nReboot\nSuspend\nHibernate\nLock" | dmenu -i)
 
 case $action in
 	"Power Down")

@@ -20,3 +20,9 @@ eval $(dircolors ~/.dir_colors)
 
 # Start DBus session and record address
 eval $(dbus-launch --sh-syntax)
+
+# Start Pulseaudio
+pulseaudio --start
+
+# Prepare logout script
+trap '. $HOME/.zlogout; exit' 0
