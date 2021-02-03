@@ -3,8 +3,7 @@
 # sync to the new one.
 
 # Record the old default sink's number to move sink inputs later
-oldSink=$(pactl list sinks short | grep $(pactl info | grep "Default Sink" | \
-	cut -d' ' -f3) | cut -d'	' -f1)
+oldSink=$(pactl list sinks short | grep "$(pactl info | grep "Default Sink" | sed 's/Default\ Sink:\ //')" | cut -d'	' -f1)
 
 # If there is an argument, set it to the chosen sink, otherwise prompt
 if [ $1 ]; then
@@ -15,7 +14,7 @@ else
 fi
 
 # Get the name of what the user answered
-newSink=$(pactl list sinks | grep -B 1 ": $choice" | head -1 | cut -d' ' -f2)
+newSink=$(pactl list sinks | grep -B 1 ": $choice" | head -1 | sed 's/.*Name: //')
 
 # Set new sink as default
 pactl set-default-sink "$newSink"

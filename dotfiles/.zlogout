@@ -1,1 +1,1 @@
-pulseaudio --kill
+#pulseaudio --kill

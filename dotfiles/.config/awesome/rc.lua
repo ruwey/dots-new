@@ -684,12 +684,15 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Volume Change
 local volNotif
 awesome.connect_signal("volume", function()
-	awful.spawn.easy_async_with_shell([[pacmd list-sinks | grep -C 11 "* index:" | tail -1 | awk '{print $2}']],
+	awful.spawn.easy_async_with_shell([[pactl list sinks | grep "Name: $(pactl info | grep 'Default Sink:' |
+										sed s/Default\ Sink:\ //g)" -A 6 | tail -1 | cut -d' ' -f2]],
 	function(stdout)
 		if (tostring(stdout) == "yes\n") then
 			volNotif = helper.notify({title="Volume Muted", message=null}, volNotif)
 		else
-			awful.spawn.easy_async_with_shell([[pacmd list-sinks | grep "* index:" -C 7 | tail -1 | sed 's/[/%]//g' | awk '{ print $4 }']],
+			awful.spawn.easy_async_with_shell([[pactl list sinks | grep "Name: $(pactl info | 
+												grep 'Default Sink:' | sed s/Default\ Sink:\ //g)" -A 7 | 
+												tail -1 | cut -d' ' -f6 | tr -d '%']],
 			function(stdout)
 				message=helper.progress(stdout, 20)
 				volNotif = helper.notify({title="墳 Volume: "..tonumber(stdout).."%", message=message}, volNotif)
