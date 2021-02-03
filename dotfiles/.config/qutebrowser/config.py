@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+config.load_autoconfig(False)
+
 # Source Yaml File {{{
 # This section manages the sourcing of a yaml file that holds the keybindings
 # and simple settings. I prefer yaml to python commands for mass data entry

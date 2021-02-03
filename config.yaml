@@ -168,6 +168,7 @@ profiles:
   # Desktop
   terminator:
     dotfiles:
+    - d_awesome
     - d_bspwm
     - d_doom
     - d_gnupg

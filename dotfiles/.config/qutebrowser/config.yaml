@@ -7,14 +7,16 @@ binds:
     <Ctrl+Shift+f>: spawn --user qute-pass
     <Ctrl+j>: tab-move -
     <Ctrl+k>: tab-move +
-    J: tab-prev
-    K: tab-next
+    j: run-with-count 2 scroll down
+    k: run-with-count 2 scroll up
     d: null
     dd: tab-close
     po: set-cmd-text -s :open -p
+    pO: set-cmd-text :open -p {url:pretty}
     zi: zoom-in
     zo: zoom-out
     zz: zoom
+    tt: config-cycle tabs.width 32 15%
     # Toggle Ad Blocking
     ",ta": config-cycle content.blocking.adblock.enabled
     ",tb": config-cycle tabs.show never always
@@ -47,9 +49,15 @@ settings:
       wirecutter: "https://www.nytimes.com/wirecutter/search/?s={}"
     content.notifications: false
     auto_save.session: true
-  "*://www.reddit.com/*":
+    
+    # Tab Bar
+    tabs.position: "left"
+    tabs.padding: {"bottom": 8, "left": 0, "right": 3, "top": 8}
+    tabs.favicons.scale: 1.5
+
+    #"*://www.reddit.com/*":
     # Fix comments not loading on reddit. (Ads are unblock-able anyway)
-    content.blocking.adblock.enabled: false
+    #content.blocking.adblock.enabled: false
 # }}}
 
 # sup

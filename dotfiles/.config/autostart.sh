@@ -1,4 +1,7 @@
 # Autostart
+# Load Xresources 
+xrdb -merge .config/Xresources
+
 # Composite Manager
 picom &
 
@@ -11,6 +14,3 @@ xwallpaper --zoom $HOME/Pictures/ColdSpace.jpg &
 #{%@@ elif colorscheme == "Mntns" @@%}#
 xwallpaper --zoom $HOME/Pictures/Mntns.png &
 #{%@@ endif @@%}#
-
-# Auto Mount Drives When They Are Plugged In
-udiskie &
