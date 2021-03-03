@@ -55,8 +55,8 @@ dmenu.selbackground: c_14
 dmenu.selforeground: c_fg
 dmenu.hlbackground: c_bg
 dmenu.hlforeground: c_11
-dmenu.hlselbackground: c_11
-dmenu.hlselforeground: c_fg
+dmenu.hlselbackground: c_14
+dmenu.hlselforeground: c_11
 
 ! polybar needs opacity in bg value
 polybar.*.colorbg: #CC091414
