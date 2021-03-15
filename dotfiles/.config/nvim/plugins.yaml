@@ -15,11 +15,11 @@
   #{%@@ if color == "Nord" @@%}#
   # Colorscheme
 - repo: arcticicestudio/nord-vim
-  #{%@@ endif @@%}
+  #{%@@ endif @@%}#
   # Status Bar
 - repo: itchyny/lightline.vim
-  # Hightlight css colors
-- repo: chrisbra/Colorizer
+  # Hightlight colors
+- repo: norcalli/nvim-colorizer.lua
 #}}}
 
   # Auto complete pairs (very cool)
@@ -53,8 +53,6 @@
     - markdown
     - pandoc.markdown
     - rmd
-- repo: KabbAmine/vCoolor.vim
-  on_cmd: VCoolor
 #}}}
 
 # File Manager {{{

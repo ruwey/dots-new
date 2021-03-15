@@ -1,0 +1,65 @@
+! Mntns color scheme
+#define c_font Cozette
+#define c_font_size 10
+#define c_0 #091414
+#define c_1 #c63939
+#define c_2 #748867
+#define c_3 #92704b
+#define c_4 #11443c
+#define c_5 #c74040
+#define c_6 #1c5a4b
+#define c_7 #d2cbc7
+#define c_8 #173737
+#define c_9 #ff3939
+#define c_10 #94c076
+#define c_11 #cc9253
+#define c_12 #145349
+#define c_13 #f34d4d
+#define c_14 #45786c
+#define c_15 #fffdf8
+#define c_fg #fffdf8
+#define c_bg #091414
+#define c_cb #f5f5f5
+#define c_cf #2C3E50
+#define c_opacity 0.8
+
+! General Definitions
+*font: c_font
+*color0: c_0
+*color1: c_1
+*color2: c_2
+*color3: c_3
+*color4: c_4
+*color5: c_5
+*color6: c_6
+*color7: c_7
+*color8: c_8
+*color9: c_9
+*color10: c_10
+*color11: c_11
+*color12: c_12
+*color13: c_13
+*color14: c_14
+*color15: c_15
+*colorfg: c_fg
+*colorbg: c_bg
+*colorcb: c_cb
+*colorcf: c_cf
+*color_opacity: c_opacity
+
+! Per-Program Stuff
+! dmenu stuff
+dmenu.background: c_bg
+dmenu.foreground: c_fg
+dmenu.selbackground: c_14
+dmenu.selforeground: c_fg
+dmenu.hlbackground: c_bg
+dmenu.hlforeground: c_11
+dmenu.hlselbackground: c_14
+dmenu.hlselforeground: c_11
+
+! polybar needs opacity in bg value
+polybar.*.colorbg: #CC091414
+
+! rofi stuff
+rofi.*.font: c_font c_font_size

@@ -146,6 +146,9 @@ dotfiles:
   f_xinitrc:
     src: .xinitrc
     dst: ~/.xinitrc
+  f_xresources:
+    src: .config/Xresources
+    dst: ~/.config/Xresources
   f_zlogout:
     src: .zlogout
     dst: ~/.zlogout
@@ -183,6 +186,7 @@ profiles:
     - f_autostart
     - f_rclone
     - f_spotifyd
+    - f_xresources
     - f_zlogout
     - f_zprofile
     - f_zshrc
