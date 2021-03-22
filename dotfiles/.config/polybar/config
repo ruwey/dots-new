@@ -1,0 +1,177 @@
+; Wow, a Polybar config
+; ruwey
+
+[colors]
+0 = ${xrdb:color0:#091414}
+1 = ${xrdb:color1:#c63939}
+2 = ${xrdb:color2:#748867}
+3 = ${xrdb:color3:#92704b}
+4 = ${xrdb:color4:#11443c}
+5 = ${xrdb:color5:#c74040}
+6 = ${xrdb:color6:#1c5a4b}
+7 = ${xrdb:color7:#d2cbc7}
+8 = ${xrdb:color8:#173737}
+9 = ${xrdb:color9:#ff3939}
+10 = ${xrdb:color10:#94c076}
+11 = ${xrdb:color11:#cc9253}
+12 = ${xrdb:color12:#145349}
+13 = ${xrdb:color13:#f34d4d}
+14 = ${xrdb:color14:#45786c}
+15 = ${xrdb:color15:#fffdf8}
+fg = ${xrdb:colorfg:#fffdf8}
+bg = ${xrdb:polybar.colorbg:#CC091414}
+cb = ${xrdb:colorcb:#f5f5f5}
+cf = ${xrdb:colorcf:#2C3E50}
+op = ${xrdb:color_opacity:0.8}
+
+; Bars {{{
+[general_conf]
+; General configs for both bars
+override_redirect = false
+bottom = false
+fixed-center = true
+dim-value = 1
+
+; Both bars share height & width b/c monitors are the same size
+width = 100%
+height = 13
+
+; Offsets are the same
+offset-x = 0
+offset-y = 0
+
+; Base Colors
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+; Border
+border-bottom-size = 4
+border-top-size = 4
+border-color = ${colors.bg}
+
+; Module-margin
+;module-margin = 1
+separator = " "
+separator-foreground = ${general_conf.format-background}
+
+; Fonts
+font-0 = "Cozette:pixelsize=1;2"
+
+[bar/main]
+; Bar for main monitor 
+inherit = general_conf
+
+monitor = DP-2
+
+modules-left = power_menu redshift
+modules-center = title
+modules-right = dwm
+
+[bar/right]
+; Bar for right monitor
+inherit = general_conf
+
+monitor = DP-5
+
+modules-left = dwm
+modules-center = title
+modules-right = clock
+
+; }}}
+
+; Modules {{{
+[general_conf]
+; Stuff to apply to all modules
+format-background = ${colors.6}
+format-padding = 0
+
+[module/clock]
+type = internal/date
+inherit = general_conf
+interval = 1.0
+
+time = %H:%M
+time-alt = %H:%M
+date-alt = " %m/%e/%y%"
+
+format = <label>
+format-alt = <label>
+label = %time%%date%
+
+; Beginning of area stuff
+format-prefix = " "
+format-prefix-foreground = ${general_conf.format-background}
+format-prefix-background = ${colors.bg}
+; End of area stuff
+format-suffix = " "
+format-suffix-foreground = ${general_conf.format-background}
+format-suffix-background = ${colors.bg}
+
+[module/dwm]
+type = internal/dwm
+format = "<label-tags>"
+inherit = general_conf
+
+label-focused-background = ${colors.10}
+label-focused-padding = 1
+label-unfocused-background = ${colors.14}
+label-unfocused-padding = 1
+label-visible-background = ${general_conf.format-background}
+label-visible-padding = 1
+label-urgent-background = ${colors.1}
+label-urgent-padding = 1
+label-empty-background = ${general_conf.format-background}
+label-empty-foreground = ${colors.7}
+label-empty-padding = 1
+
+format-prefix = " "
+format-prefix-foreground = ${general_conf.format-background}
+format-prefix-background = ${colors.bg}
+
+format-suffix = " "
+format-suffix-foreground = ${general_conf.format-background}
+format-suffix-background = ${colors.bg}
+
+[module/power_menu]
+type = custom/text
+content = " ⏻ "
+
+click-left = DMENU_CMD="dmenu -x 2 -y 23 -z 100 -l 40 -bw 2 -m 0 -sb $(xgetres color1)" ./.scripts/powerMenu
+
+; Beginning of area stuff
+content-prefix = " "
+content-prefix-foreground = ${general_conf.format-background}
+content-prefix-background = ${colors.bg}
+
+; Text doesn't format like everything else (hrumph)
+content-background = ${general_conf.format-background}
+content-padding = ${general_conf.format-padding}
+
+; Custom Script for back light color
+
+[module/redshift]
+type = custom/script
+inherit = general_conf
+
+exec = source ~/.config/polybar/scripts/polybar-redshift/env.sh && ~/.config/polybar/scripts/polybar-redshift/redshift.sh temperature 
+interval=0.5
+
+click-left = ~/.config/polybar/scripts/polybar-redshift/redshift.sh toggle 
+click-right = ~/.config/polybar/scripts/polybar-redshift/redshift.sh set 4500
+scroll-up = ~/.config/polybar/scripts/polybar-redshift/redshift.sh increase
+scroll-down = ~/.config/polybar/scripts/polybar-redshift/redshift.sh decrease
+
+format-prefix = " "  
+
+; End of area stuff
+format-suffix = " "
+format-suffix-foreground = ${general_conf.format-background}
+format-suffix-background = ${colors.bg}
+
+[module/title]
+type = internal/dwm
+format = <label-floating> <label-title>
+label-floating = [F]
+
+; }}}
+; vim:ft=dosini
