@@ -1,6 +1,5 @@
 # Set path
 export PATH=$HOME/.scripts:$PATH:$HOME/.local/bin
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 # Set editor
@@ -22,7 +21,8 @@ eval $(dircolors ~/.dir_colors)
 eval $(dbus-launch --sh-syntax)
 
 # Start Pulseaudio
-pulseaudio --start
+#pulseaudio --start &
+pipewire &
 
 # Prepare logout script
 trap '. $HOME/.zlogout; exit' 0
