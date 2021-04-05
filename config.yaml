@@ -205,6 +205,7 @@ profiles:
     - d_iosevka
     - d_nvim
     - d_pictures
+    - d_polybar
     - d_qutebrowser
     - d_scripts
     - d_spicetify

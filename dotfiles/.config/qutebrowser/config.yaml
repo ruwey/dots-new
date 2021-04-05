@@ -48,6 +48,7 @@ settings:
       protondb: "https://www.protondb.com/search?q={}"
       wirecutter: "https://www.nytimes.com/wirecutter/search/?s={}"
     content.notifications: false
+    content.autoplay: false
     auto_save.session: true
     
     # Tab Bar
