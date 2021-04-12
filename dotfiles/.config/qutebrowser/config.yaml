@@ -30,6 +30,12 @@ binds:
     ",vo": spawn -u view_in_mpv
   insert:
     <Ctrl+e>: null
+    <Ctrl+Shift+f>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret'
+    <Ctrl+Shift+p>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    --username-target secret --password-only'
+    #<Ctrl+Shift+f>u: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
+    #--username-target secret --username-only'
 # }}}
 
 # Settings {{{

@@ -2,4 +2,4 @@
 
 pgrep -x transmission-da || transmission-daemon
 
-transmission-remote -a "$@" && dunstify "🔽 Torrent added."
+transmission-remote -a "$@" && notify-send "🔽 Torrent added."
