@@ -65,7 +65,7 @@ monitor = DP-2
 
 modules-left = power_menu redshift
 modules-center = title
-modules-right = dwm
+modules-right = herbstluft_left dwm
 
 [bar/right]
 ; Bar for right monitor
@@ -73,7 +73,7 @@ inherit = general_conf
 
 monitor = DP-5
 
-modules-left = dwm
+modules-left = herbstluft_right dwm
 modules-center = title
 modules-right = clock
 
@@ -123,6 +123,36 @@ label-urgent-padding = 1
 label-empty-background = ${general_conf.format-background}
 label-empty-foreground = ${colors.7}
 label-empty-padding = 1
+
+format-prefix = " "
+format-prefix-foreground = ${general_conf.format-background}
+format-prefix-background = ${colors.bg}
+
+format-suffix = " "
+format-suffix-foreground = ${general_conf.format-background}
+format-suffix-background = ${colors.bg}
+
+[module/herbstluft_left]
+type = custom/script
+inherit = general_conf
+
+exec = ~/.config/polybar/scripts/info-hlwm-workspaces.sh 1_
+tail = true
+
+format-prefix = " "
+format-prefix-foreground = ${general_conf.format-background}
+format-prefix-background = ${colors.bg}
+
+format-suffix = " "
+format-suffix-foreground = ${general_conf.format-background}
+format-suffix-background = ${colors.bg}
+
+[module/herbstluft_right]
+type = custom/script
+inherit = general_conf
+
+exec = ~/.config/polybar/scripts/info-hlwm-workspaces.sh 2_
+tail = true
 
 format-prefix = " "
 format-prefix-foreground = ${general_conf.format-background}

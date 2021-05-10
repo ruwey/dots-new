@@ -72,6 +72,10 @@ dotfiles:
     src: .gnupg
     dst: ~/.gnupg
     link: link_children
+  d_herbstluft:
+    src: .config/herbstluftwm
+    dst: ~/.config/herbstluftwm
+    link: link_children
   d_i3:
     src: .config/i3
     dst: ~/.config/i3
@@ -175,6 +179,7 @@ profiles:
     - d_bspwm
     - d_doom
     - d_gnupg
+    - d_herbstluft
     - d_i3
     - d_nvim
     - d_pictures
