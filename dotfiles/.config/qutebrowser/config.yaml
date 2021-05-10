@@ -5,8 +5,8 @@
 binds:
   normal:
     <Ctrl+Shift+f>: spawn --user qute-pass
-    <Ctrl+j>: tab-move -
-    <Ctrl+k>: tab-move +
+    <Ctrl+j>: tab-move +
+    <Ctrl+k>: tab-move -
     j: run-with-count 2 scroll down
     k: run-with-count 2 scroll up
     d: null
