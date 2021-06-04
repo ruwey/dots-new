@@ -2,6 +2,9 @@
 export PATH=$HOME/.scripts:$PATH:$HOME/.local/bin
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Manpath
+export MANPATH=$(manpath)
+
 # Set editor
 export EDITOR=nvim
 
