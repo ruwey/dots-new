@@ -31,7 +31,9 @@ hc keybind XF86AudioMute spawn chVol mute
 hc keybind XF86AudioPlay spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) play-pause'
 hc keybind XF86AudioNext spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) next'
 hc keybind XF86AudioPrev spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) previous'
-hc keybind $Mod+m spawn chMp
+hc keybind $Mod-m spawn chSink
+hc keybind $Mod-Shift-m spawn chMp
+#hc keybind $Mod-m spawn chMp
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -74,6 +76,8 @@ hc keybind $Mod-Control-Left    resize left +$resizestep
 hc keybind $Mod-Control-Down    resize down +$resizestep
 hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
+
+hc set default_frame_layout max
 
 # tags
 ## Default logic
@@ -123,9 +127,9 @@ hc keybind $Mod-r remove
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
 hc keybind $Mod-Shift-f set_attr clients.focus.floating toggle
-hc keybind $Mod-Shift-m set_attr clients.focus.minimized true
+hc keybind $Mod-Shift-n set_attr clients.focus.minimized true
 # restore all minimized windows of the focused tag
-hc keybind $Mod-Ctrl-m foreach CLIENT clients. \
+hc keybind $Mod-Ctrl-n foreach CLIENT clients. \
      sprintf MINATT "%c.minimized" CLIENT \
      sprintf TAGATT "%c.tag" CLIENT and \
        , compare MINATT "=" "true" \
@@ -169,8 +173,8 @@ hc set frame_bg_transparent on
 hc set frame_transparent_width 5
 hc set frame_gap 0
 
-hc attr theme.title_height 15
-hc attr theme.title_font 'Dejavu Sans:pixelsize=12'  # example using Xft
+hc attr theme.title_height 13
+hc attr theme.title_font 'Cozette:pixelsize=10'  # example using Xft
 # hc attr theme.title_font '-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
 hc attr theme.padding_top 2  # space below the title's baseline (i.e. text depth)
 hc attr theme.active.color '#9fbc00'
@@ -204,8 +208,11 @@ hc rule floatplacement=smart
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+hc rule class="Xman" floating=on
 
 hc set tree_style '╾│ ├└╼─┐'
+
+hc split vertical 0.5; hc remove
 
 # unlock, just to be sure
 hc unlock
@@ -223,4 +230,8 @@ hc detect_monitors
 #    "$panel" "$monitor" &
 #done
 
+# Autostart Programs
 $HOME/.config/autostart.sh
+
+# Polybar
+$HOME/.config/polybar/bar
