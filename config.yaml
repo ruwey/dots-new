@@ -72,6 +72,10 @@ dotfiles:
     src: .gnupg
     dst: ~/.gnupg
     link: link_children
+  d_herbstluft:
+    src: .config/herbstluftwm
+    dst: ~/.config/herbstluftwm
+    link: link_children
   d_i3:
     src: .config/i3
     dst: ~/.config/i3
@@ -116,6 +120,10 @@ dotfiles:
     src: .config/tridactyl
     dst: ~/.config/tridactyl
     link: link_children
+  f_alacritty:
+    src: .config/alacritty
+    dst: ~/.config/alacritty
+    link: link
   f_autostart:
     src: .config/autostart.sh
     dst: ~/.config/autostart.sh
@@ -175,6 +183,7 @@ profiles:
     - d_bspwm
     - d_doom
     - d_gnupg
+    - d_herbstluft
     - d_i3
     - d_nvim
     - d_pictures
@@ -184,6 +193,7 @@ profiles:
     - d_sxhkd
     - d_tridactyl
     - d_termite
+    - f_alacritty
     - f_autostart
     - f_rclone
     - f_spotifyd

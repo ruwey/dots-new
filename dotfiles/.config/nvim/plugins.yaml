@@ -53,6 +53,12 @@
     - markdown
     - pandoc.markdown
     - rmd
+- repo: eraserhd/parinfer-rust
+  build: cargo build --release
+  on_ft:
+    - lisp
+    - clojure
+    - scheme
 #}}}
 
 # File Manager {{{

@@ -2,8 +2,10 @@
 # Load Xresources 
 xrdb -merge .config/Xresources
 
+/usr/lib/kdeconnectd &
+
 # Composite Manager
-picom &
+picom --experimental-backends &
 
 # Notification Manager
 dunst &

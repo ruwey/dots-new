@@ -49,14 +49,15 @@
 
 ! Per-Program Stuff
 ! dmenu stuff
+dmenu.font: c_font:pixelsize=c_font_size
 dmenu.background: c_bg
 dmenu.foreground: c_fg
 dmenu.selbackground: c_14
 dmenu.selforeground: c_fg
 dmenu.hlbackground: c_bg
-dmenu.hlforeground: c_11
+dmenu.hlforeground: c_fg
 dmenu.hlselbackground: c_14
-dmenu.hlselforeground: c_11
+dmenu.hlselforeground: c_fg
 
 ! polybar needs opacity in bg value
 polybar.*.colorbg: #CC091414
