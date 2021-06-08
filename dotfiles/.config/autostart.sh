@@ -8,6 +8,9 @@ picom &
 # Notification Manager
 dunst &
 
+# Chinese Input
+ibus-daemon -d
+
 # Set Background
 #{%@@ if colorscheme == "Nord" @@%}#
 xwallpaper --zoom $HOME/Pictures/PFPrism.png &
