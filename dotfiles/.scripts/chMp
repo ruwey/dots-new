@@ -2,6 +2,9 @@
 # chMp <media player>
 # A script to change media players for mpris
 
+# Set default dmenu command
+dcmd="${DMENU_CMD:-dmenu -l 4}"
+
 # Get all available players
 players=$( playerctl -l )
 
@@ -11,7 +14,7 @@ if [[ -n $1 ]]; then
 	[ -n $(grep $1 <<< $players) ] && echo $1 > $HOME/.local/share/mediaPlayer
 else	# Start check menu
 	# Ask user what player to choose
-	choice=$(rofi -dmenu -p "Media Player" <<< $players) 
+	choice=$($dcmd -p "Media Player" <<< $players) 
 	# Set choice as mp
 	[[ -n $choice ]] && echo $choice > $HOME/.local/share/mediaPlayer
 fi
