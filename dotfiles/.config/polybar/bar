@@ -6,15 +6,16 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-if [ "$1" = "-r" ]
-then
-	polybar -r main &
-	polybar -r right &
-else
-	polybar main &
-	polybar right &
+args=()
+if [ "$1" = "-r" ]; then
+	args+="-r"
 fi
 
-# Launch Polybar, using default config location ~/.config/polybar/config
+if [ $(polybar -M | wc -l) -eq 1 ]; then
+	polybar $args single &
+else
+	polybar $args main &
+	polybar $args right &
+fi
 
 echo "Polybar launched..."
