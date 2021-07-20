@@ -212,6 +212,7 @@ profiles:
     - d_bspwm
     - d_doom
     - d_gnupg
+    - d_herbstluft
     - d_iosevka
     - d_nvim
     - d_pictures

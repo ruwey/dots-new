@@ -1,0 +1,14 @@
+#!/bin/env bash
+# A replacement for herbstluft's detect_monitors command that sets the name var
+
+hc() {
+	herbstclient "$@"
+}
+
+MONS=($(xrandr --listactivemonitors | awk '/[0-9]:/ { sub("^  ", ""); sub("/.*x", "x"); sub("/[^+]*", ""); print $3 "_" $4 }'))
+
+hc set_monitors ${MONS[@]%_*}
+
+for monitor in "${!MONS[@]}"; do
+	hc rename_monitor $monitor ${MONS[$monitor]#*_}
+done

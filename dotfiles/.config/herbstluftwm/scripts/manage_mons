@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Manages setting up monitors and giving each monitor its own set of tags
+
+hc() {
+	herbstclient "$@"
+}
+
+# Important Vars
+TAGS=($(hc tag_status | sed 's/	./	/g'))
+MONS=($(xrandr --listactivemonitors | awk '/[0-9]:/ { gsub("[+*]", ""); print $2 }'))
+tag_list=( {1..9} 0 )
+
+hc lock
+
+# Clean up by removing any tags that belong to non-connected monitors
+for tag in "${TAGS[@]}"; do
+	if [ ! "$(echo ${MONS[@]} | grep -w "${tag%_*}")" ]; then
+		hc merge_tag $tag
+	fi
+done
+
+hc rename default ${MONS[0]}_1 || true
+
+# Create 10 tags per monitor
+for monitor in "${MONS[@]}"; do
+	for tag in "${tag_list[@]}"; do
+		hc add ${monitor}_${tag}
+	done
+done
+
+# Regenerate key bindings for the new set of tags
+for tag in "${tag_list[@]}"; do
+	switch_bind="hc keybind "Mod4-$tag" or"
+	move_bind="hc keybind "Mod4-Shift-$tag" or"
+	for monitor in "${MONS[@]}"; do
+		switch_bind+=" CASE and . compare monitors.focus.name = $monitor . use ${monitor}_${tag}"
+		move_bind+=" CASE and . compare monitors.focus.name = $monitor . move ${monitor}_${tag}"
+	done
+	$switch_bind
+	$move_bind
+done
+
+hc unlock
