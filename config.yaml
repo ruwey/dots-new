@@ -121,8 +121,8 @@ dotfiles:
     dst: ~/.config/tridactyl
     link: link_children
   f_alacritty:
-    src: .config/alacritty
-    dst: ~/.config/alacritty
+    src: .config/alacritty.yml
+    dst: ~/.config/alacritty.yml
     link: link
   f_autostart:
     src: .config/autostart.sh
@@ -223,6 +223,7 @@ profiles:
     - d_sxhkd
     - d_termite
     - d_tridactyl
+    - f_alacritty
     - f_autostart
     - f_crontab
     - f_dircolors
