@@ -21,7 +21,6 @@ binds:
     zi: zoom-in
     zo: zoom-out
     zz: zoom
-    tt: config-cycle tabs.width 32 15%
     # Toggle Ad Blocking
     ",ta": config-cycle content.blocking.adblock.enabled
     ",tb": config-cycle tabs.show never always
@@ -70,10 +69,6 @@ settings:
         #- "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
         #- "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoMirror/NanoDefender.txt"
         #- "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoBase.txt"
-    # Tab Bar
-    tabs.position: "left"
-    tabs.padding: {"bottom": 8, "left": 0, "right": 3, "top": 8}
-    tabs.favicons.scale: 1.5
 
     #"*://www.reddit.com/*":
     # Fix comments not loading on reddit. (Ads are unblock-able anyway)
