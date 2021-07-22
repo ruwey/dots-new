@@ -65,7 +65,7 @@ monitor = DP-2
 
 modules-left = power_menu redshift
 modules-center = title
-modules-right = herbstluft_left dwm
+modules-right = herbstluft_left
 
 [bar/right]
 ; Bar for right monitor
@@ -73,7 +73,7 @@ inherit = general_conf
 
 monitor = DP-5
 
-modules-left = dwm herbstluft_right
+modules-left = herbstluft_right
 modules-center = title
 modules-right = clock
 
