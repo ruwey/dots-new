@@ -148,7 +148,7 @@ hc keybind $Mod-Ctrl-n foreach CLIENT clients. \
        , compare MINATT "=" "true" \
        , substitute FOCUS "tags.focus.name" compare TAGATT "=" FOCUS \
        , set_attr MINATT false
-hc keybind $Mod-p pseudotile toggle
+hc keybind $Mod-Shift-s pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
@@ -185,6 +185,9 @@ hc set always_show_frame on
 hc set frame_bg_transparent on
 hc set frame_transparent_width 5
 hc set frame_gap 10
+hc set frame_bg_transparent off
+hc set frame_transparent_width 4
+hc set frame_gap 18
 
 # Title/Borders
 hc attr theme.title_height 13
