@@ -45,12 +45,12 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 
 ; Border
-border-bottom-size = 4
-border-top-size = 4
+;border-bottom-size = 4
+;border-top-size = 4
+border-size = 4
 border-color = ${colors.bg}
 
 ; Module-margin
-;module-margin = 1
 separator = " "
 separator-foreground = ${self.format-background}
 
@@ -188,31 +188,15 @@ label-empty-padding = 1
 type = custom/script
 inherit = general_conf borders
 
-exec = ~/.config/polybar/scripts/info-hlwm-workspaces.sh HDMI-0_
+exec = ~/.config/polybar/scripts/info-hlwm-workspaces.sh DP-2_
 tail = true
-
-format-prefix = " "
-format-prefix-foreground = ${general_conf.format-background}
-format-prefix-background = ${colors.bg}
-
-format-suffix = " "
-format-suffix-foreground = ${general_conf.format-background}
-format-suffix-background = ${colors.bg}
 
 [module/herbstluft_right]
 type = custom/script
 inherit = general_conf borders
 
-exec = ~/.config/polybar/scripts/info-hlwm-workspaces.sh eDP-1-1_
+exec = ~/.config/polybar/scripts/info-hlwm-workspaces.sh DP-5_
 tail = true
-
-format-prefix = " "
-format-prefix-foreground = ${general_conf.format-background}
-format-prefix-background = ${colors.bg}
-
-format-suffix = " "
-format-suffix-foreground = ${general_conf.format-background}
-format-suffix-background = ${colors.bg}
 
 [module/power_menu]
 type = custom/text
