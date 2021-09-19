@@ -1,0 +1,7 @@
+#!/bin/bash
+# dmenu_split
+# launch a program (chosen by dmenu) in a new hlwm frame split
+
+RUN="$(dmenu_path | dmenu "$@")"
+
+herbstclient chain , split auto , rule once index='@p/' , spawn "$RUN"

@@ -1,0 +1,37 @@
+#!/bin/bash
+# scratchpad CLASS CREATION_COMMAND [RULE 1 [RULE 2...]]
+# create or toggle visible a scratchpad window
+
+hc() {
+	herbstclient "$@"
+}
+
+SCRATCH_CLASS="$1"
+CREATION_COMMAND="$2"
+shift 2
+RULES="${@-}"
+
+hc lock
+
+client=($(hc foreach CLIENT clients. \
+		sprintf CLASS "%c.class" CLIENT \
+		sprintf WINID "%c.winid" CLIENT \
+		sprintf MINZ "%c.minimized" CLIENT \
+		sprintf OUT "%s %s %s" CLASS WINID MINZ \
+		echo OUT | grep "^${SCRATCH_CLASS}"
+		))
+
+if [ -n "$client" ]; then
+	if [ ${client[2]} = "true" ]; then
+		hc bring ${client[1]}
+	else
+		hc set_attr clients.${client[1]}.minimized true
+	fi
+else
+	# Create new scratchpad window with correct properties
+	hc rule once class="$SCRATCH_CLASS" floating=on floatplacement=center $RULES
+	hc spawn $CREATION_COMMAND
+	echo hi
+fi
+
+hc unlock

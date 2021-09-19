@@ -11,6 +11,7 @@ hc emit_hook reload
 # remove all existing keybindings
 hc keyunbind --all
 
+scpt=$HOME/.config/herbstluftwm/scripts
 # keybindings
 # if you have a super key you will be much happier with Mod set to Mod4
 #Mod=Mod1    # Use alt as the main modifier
@@ -18,9 +19,13 @@ Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-e quit
 hc keybind $Mod-e reload
-hc keybind $Mod-Shift-q close
+#hc keybind $Mod-q close_or_remove
+#hc keybind $Mod-Shift-q close_and_remove
+hc keybind $Mod-Shift-q close_or_remove
 hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
+hc keybind $Mod-Shift-Return chain , split auto , rule once index='@p/' , spawn "${TERMINAL:-xterm}"
 hc keybind $Mod-d spawn "dmenu_run"
+hc keybind $Mod-Shift-d spawn "$scpt/dmenu_split"
 
 # Media Keys
 hc keybind XF86AudioRaiseVolume spawn chVol +5%
@@ -33,6 +38,8 @@ hc keybind XF86AudioNext spawn sh -c 'playerctl -p $(cat $HOME/.local/share/medi
 hc keybind XF86AudioPrev spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) previous'
 hc keybind $Mod-m spawn chSink
 hc keybind $Mod-Shift-m spawn chMp
+hc keybind $Mod-Ctrl-m spawn $scpt/scratchpad scratchpad_pulse \
+	"termite --class=scratchpad_pulse --exec=pulsemixer" floating_geometry=800x500
 #hc keybind $Mod-m spawn chMp
 
 # Brightness
@@ -43,7 +50,11 @@ hc keybind XF86MonBrightnessDown spawn chBl -10
 hc keybind $Mod-p spawn sh -c 'passmenu'
 hc keybind $Mod-Shift-p spawn sh -c 'ykOath'
 
-hc keybind Mod4-BackSpace spawn sh -c 'powerMenu'
+hc keybind $Mod-BackSpace spawn sh -c 'powerMenu'
+
+# Calculator Scratchpad
+hc keybind $Mod-Shift-c spawn $scpt/scratchpad scratchpad_calc \
+	"qalculate-gtk --class=scratchpad_calc"
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -148,7 +159,7 @@ hc keybind $Mod-Ctrl-n foreach CLIENT clients. \
        , compare MINATT "=" "true" \
        , substitute FOCUS "tags.focus.name" compare TAGATT "=" FOCUS \
        , set_attr MINATT false
-hc keybind $Mod-p pseudotile toggle
+hc keybind $Mod-Ctrl-p pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
