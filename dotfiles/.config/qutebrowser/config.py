@@ -35,4 +35,5 @@ for type, content in yaml_cfg.items():
 # }}}
 
 # Colorscheme
-config.source('base16-gruvbox-dark-hard.config.py')
+#config.source('base16-gruvbox-dark-hard.config.py')
+config.source('mntns.py')
