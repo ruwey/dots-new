@@ -24,8 +24,8 @@ eval $(dircolors ~/.dir_colors)
 eval $(dbus-launch --sh-syntax)
 
 # Start Pulseaudio
-#pulseaudio --start &
-pipewire &
+pulseaudio --start &
+#pipewire &
 
 # Prepare logout script
 trap '. $HOME/.zlogout; exit' 0
