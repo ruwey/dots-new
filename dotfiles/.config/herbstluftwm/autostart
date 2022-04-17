@@ -31,6 +31,7 @@ hc keybind XF86AudioMute spawn chVol mute
 hc keybind XF86AudioPlay spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) play-pause'
 hc keybind XF86AudioNext spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) next'
 hc keybind XF86AudioPrev spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) previous'
+hc keybind Mod4+Ctrl+Shift+a spawn sh -c 'sleep .2; xdotool type aramie'
 hc keybind $Mod-m spawn chSink
 hc keybind $Mod-Shift-m spawn chMp
 #hc keybind $Mod-m spawn chMp
@@ -187,7 +188,7 @@ hc set frame_gap 18
 # Title/Borders
 #hc attr theme.title_height 12
 hc attr theme.title_height 0
-hc attr theme.title_font 'Cozette:pixelsize=11'  # example using Xft
+hc attr theme.title_font 'Cozette:pixelsize=10'  # example using Xft
 #hc attr theme.title_font 'Iosevka Ruwey:size=10'
 hc attr theme.padding_top 0  # space below the title's baseline (i.e. text depth)
 hc attr theme.active.color '#45786c'

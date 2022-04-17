@@ -203,7 +203,7 @@ type = custom/text
 inherit = general_conf borders
 
 content = " ⏻ "
-click-left = DMENU_CMD="dmenu -x 2 -y 27 -z 100 -l 40 -bw 2 -m 1 -sb $(xgetres color1)" ~/.scripts/powerMenu
+click-left = DMENU_CMD="dmenu -x 2 -y 23 -z 100 -l 40 -bw 2 -m 0 -sb $(xgetres color1)" ~/.scripts/powerMenu
 
 ; Custom Script for back light color
 [module/redshift]
