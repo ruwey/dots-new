@@ -5,9 +5,9 @@
 binds:
   normal:
     <Ctrl+Shift+f>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret'
+    --username-target secret --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
     <Ctrl+Shift+p>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --password-only'
+    --username-target secret --password-only --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
     <Ctrl+j>: tab-move -
     <Ctrl+k>: tab-move +
     <Ctrl+j>: tab-move +
@@ -35,9 +35,9 @@ binds:
   insert:
     <Ctrl+e>: null
     <Ctrl+Shift+f>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret'
+    --username-target secret --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
     <Ctrl+Shift+p>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --password-only'
+    --username-target secret --password-only --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
     #<Ctrl+Shift+f>u: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
     #--username-target secret --username-only'
 # }}}
