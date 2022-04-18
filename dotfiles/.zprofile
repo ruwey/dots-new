@@ -9,7 +9,7 @@ export MANPATH=$(manpath)
 export EDITOR=nvim
 
 # Set terminal
-export TERMINAL=termite
+export TERMINAL=alacritty
 
 # Add scripts to path
 export PATH=$HOME/.scripts:$PATH
@@ -21,10 +21,9 @@ export FZF_DEFAULT_COMMAND="find ."
 eval $(dircolors ~/.dir_colors)
 
 # Start DBus session and record address
-eval $(dbus-launch --sh-syntax)
+#eval $(dbus-launch --sh-syntax)
 
 # Start Pulseaudio
-pulseaudio --start &
 #pipewire &
 
 # Prepare logout script

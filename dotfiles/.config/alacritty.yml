@@ -55,10 +55,9 @@ window:
     y: 30
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
-  #
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
@@ -97,6 +96,8 @@ window:
   # Override the variant of the GTK theme. Commonly supported values are `dark`
   # and `light`. Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
+  
+  opacity: 0.8
 
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -398,7 +399,7 @@ colors: *mntns
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: .8
+#background_opacity: .8
 
 #selection:
   # This string contains all characters that are used as separators for

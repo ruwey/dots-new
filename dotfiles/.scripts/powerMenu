@@ -9,10 +9,12 @@ action=$(echo -e "Power Down\nReboot\nSuspend\nHibernate\nLock\nBlank Screen" | 
 
 case $action in
 	"Power Down")
-		loginctl poweroff
+		#loginctl poweroff
+		dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
 		;;
 	"Reboot")
 		loginctl reboot
+		dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
 		;;
 	"Suspend")
 		blurlock -s
