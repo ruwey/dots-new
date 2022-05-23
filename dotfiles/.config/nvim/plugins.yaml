@@ -24,6 +24,7 @@
 
   # Auto complete pairs (very cool)
 - repo: jiangmiao/auto-pairs
+- repo: aymericbeaumet/vim-symlink
 
 #}}}
 

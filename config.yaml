@@ -140,6 +140,10 @@ dotfiles:
     src: .config/eidolon/config.json
     dst: ~/.config/eidolon/config.json
     link: link
+  f_ncmpcpp:
+    src: .config/ncmpcpp/config
+    dst: ~/.config/ncmpcpp/config
+    link: link
   f_rclone:
     src: .config/rclone/rclone.conf
     dst: ~/.config/rclone/rclone.conf
@@ -195,6 +199,7 @@ profiles:
     - d_termite
     - f_alacritty
     - f_autostart
+    - f_ncmpcpp
     - f_rclone
     - f_spotifyd
     - f_xresources

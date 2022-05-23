@@ -15,6 +15,7 @@ hc keyunbind --all
 # if you have a super key you will be much happier with Mod set to Mod4
 #Mod=Mod1    # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
+SYSTEM_SCRIPTS=$HOME/.scripts
 
 hc keybind $Mod-Shift-e quit
 hc keybind $Mod-e reload
@@ -23,17 +24,16 @@ hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xter
 hc keybind $Mod-d spawn "dmenu_run"
 
 # Media Keys
-hc keybind XF86AudioRaiseVolume spawn chVol +5%
-hc keybind XF86AudioLowerVolume spawn chVol -5%
-hc keybind Shift+XF86AudioRaiseVolume spawn chVol +2%
-hc keybind Shift+XF86AudioLowerVolume spawn chVol -2%
-hc keybind XF86AudioMute spawn chVol mute
+hc keybind XF86AudioRaiseVolume spawn $SYSTEM_SCRIPTS/chVol +5%
+hc keybind XF86AudioLowerVolume spawn $SYSTEM_SCRIPTS/chVol -5%
+hc keybind Shift+XF86AudioRaiseVolume spawn $SYSTEM_SCRIPTS/chVol +2%
+hc keybind Shift+XF86AudioLowerVolume spawn $SYSTEM_SCRIPTS/chVol -2%
+hc keybind XF86AudioMute spawn $SYSTEM_SCRIPTS/chVol mute
 hc keybind XF86AudioPlay spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) play-pause'
 hc keybind XF86AudioNext spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) next'
 hc keybind XF86AudioPrev spawn sh -c 'playerctl -p $(cat $HOME/.local/share/mediaPlayer) previous'
-hc keybind Mod4+Ctrl+Shift+a spawn sh -c 'sleep .2; xdotool type aramie'
-hc keybind $Mod-m spawn chSink
-hc keybind $Mod-Shift-m spawn chMp
+hc keybind $Mod-m spawn $SYSTEM_SCRIPTS/chSink
+hc keybind $Mod-Shift-m spawn $SYSTEM_SCRIPTS/chMp
 #hc keybind $Mod-m spawn chMp
 
 # Brightness
@@ -44,8 +44,10 @@ hc keybind XF86MonBrightnessDown spawn chBl -10
 hc keybind $Mod-p spawn sh -c 'passmenu'
 hc keybind $Mod-Shift-p spawn sh -c 'ykOath'
 
-hc keybind Mod4-BackSpace spawn sh -c 'powerMenu'
+hc keybind $Mod-BackSpace spawn $SYSTEM_SCRIPTS/powerMenu
 
+# Screenshot Util (will add more)
+hc keybind $Mod-n spawn $SYSTEM_SCRIPTS/ss_to_clipboard
 # basic movement in tiling and floating mode
 # focusing clients
 hc keybind $Mod-Left  focus left
