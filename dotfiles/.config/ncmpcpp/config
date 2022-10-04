@@ -19,7 +19,7 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-#lyrics_directory = ~/.lyrics
+lyrics_directory = ~/.config/ncmpcpp/lyrics
 #
 ##### connection settings #####
 #
@@ -273,7 +273,7 @@ albumart_yoffset = 0
 ## Note: colors can be nested.
 ##
 #
-song_list_format = $(5)$b%b$/b $(end)$(15) %t $R $(end)$(5) [%l] $(end) $(4)%a$(end)
+song_list_format = $(5)$b%20b$/b $(end)$(15) %t $R $(end)$(5) [%l] $(end) $(4)%a$(end)
 #song_list_format =
 #
 #song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
@@ -450,11 +450,11 @@ titles_visibility = no
 #
 #header_text_scrolling = yes
 #
-#cyclic_scrolling = no
+cyclic_scrolling = yes
 #
-#lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+lyrics_fetchers = azlyrics, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
 #
-#follow_now_playing_lyrics = no
+follow_now_playing_lyrics = yes
 #
 #fetch_lyrics_for_current_song_in_background = no
 #

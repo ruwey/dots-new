@@ -1,60 +1,32 @@
-##################################################
-#  _____                                         #
-#/\  _ `\   A Cool Guy (ruwey.com)               #
-#\ \ \L\ \  __  __  __  __  __    __  __  ___    #
-# \ \ ,  / /\ \/\ \/\ \/\ \/\ \ /'__\/\ \/\  \   #
-#  \ \ \ \ \ \ \_\ \ \ \_/ \_/ /\  __\ \ \_\  \  #
-#   \ \_\ \_\ \____/\ \___x___/\ \____\/\`____ \ #
-#    \/_/\/ /\/___/  \/__//__/  \/____/\`/___/> \#
-#        ____________________________________\  /#
-#       /\_____________________________________/ #
-#       \/____________________________________/  #
-#                                                #
-##################################################
-
-# Config {{{
 config:
   backup: false
   banner: false
   create: true
   dotpath: dotfiles
   keepdot: true
-  minversion: 0.29.5
+  minversion: 1.11.0
   import_variables:
-    - colors/{{@@ colorscheme @@}}.yaml
+  - colors/{{@@ colorscheme @@}}.yaml
 
 #}}}
 
 # Varaibles {{{
 variables:
-  colorscheme: "Nord"
-
-#}}}
-
-# Transformations {{{
+  colorscheme: Nord
 trans_read:
-  unencrypt: "gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}"
+  unencrypt: gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}
 trans_write:
-  encrypt: "gpg2 -r CE1DB345728014562E19AEF940CBAA1DA3094BB8 --output {1} --encrypt {0}"
-
-#}}}
-
-# Actions {{{
+  encrypt: gpg2 -r CE1DB345728014562E19AEF940CBAA1DA3094BB8 --output {1} --encrypt
+    {0}
 actions:
   pre:
-    install-dein: test -e ~/.config/nvim/dein || (curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/dein-installer.sh; sh /tmp/dein-installer.sh ~/.config/nvim/dein) 
+    install-dein: test -e ~/.config/nvim/dein || (curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+      > /tmp/dein-installer.sh; sh /tmp/dein-installer.sh ~/.config/nvim/dein)
   post:
     install-zinit: test -e ~/.zinit || (sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)")
-    install-doom: test -e ~/.emacs.d || (git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d; ~/.emacs.d/bin/doom install)
+    install-doom: test -e ~/.emacs.d || (git clone --depth 1 https://github.com/hlissner/doom-emacs
+      ~/.emacs.d; ~/.emacs.d/bin/doom install)
     install-cron: crontab ~/.config/crontab
-
-#}}}
-
-# Dotfiles {{{
-# The first letter indicates the type:
-# b     binding
-# d     directory
-# f     file
 dotfiles:
   d_awesome:
     src: .config/awesome
@@ -67,7 +39,7 @@ dotfiles:
     src: .doom.d
     dst: ~/.doom.d
     actions:
-      - install-doom
+    - install-doom
   d_gnupg:
     src: .gnupg
     dst: ~/.gnupg
@@ -83,16 +55,16 @@ dotfiles:
   d_iosevka:
     src: .local/share/fonts/iosevka-ruwey
     dst: ~/.local/share/fonts/iosevka-ruwey
-    link: link
+    link: absolute
   d_nvim:
     src: .config/nvim
     dst: ~/.config/nvim
     actions:
-      - install-dein
+    - install-dein
   d_pictures:
     src: Pictures
     dst: ~/Pictures
-    link: link
+    link: absolute
   d_polybar:
     src: .config/polybar
     dst: ~/.config/polybar
@@ -104,12 +76,11 @@ dotfiles:
   d_scripts:
     src: .scripts
     dst: ~/.scripts
-    link: link
+    link: absolute
   d_spicetify:
     src: .config/spicetify
     dst: ~/.config/spicetify
     link: link_children
-  # Generic keybindings
   d_sxhkd:
     src: .config/sxhkd/
     dst: ~/.config/sxhkd/
@@ -123,7 +94,7 @@ dotfiles:
   f_alacritty:
     src: .config/alacritty.yml
     dst: ~/.config/alacritty.yml
-    link: link
+    link: absolute
   f_autostart:
     src: .config/autostart.sh
     dst: ~/.config/autostart.sh
@@ -131,25 +102,24 @@ dotfiles:
     src: .config/crontab
     dst: ~/.config/crontab
     actions:
-      - install-cron
+    - install-cron
   f_dircolors:
     src: .dir_colors
     dst: ~/.dir_colors
-    link: link
+    link: absolute
   f_eidolon:
     src: .config/eidolon/config.json
     dst: ~/.config/eidolon/config.json
-    link: link
+    link: absolute
   f_ncmpcpp:
     src: .config/ncmpcpp/config
     dst: ~/.config/ncmpcpp/config
-    link: link
+    link: absolute
   f_rclone:
     src: .config/rclone/rclone.conf
     dst: ~/.config/rclone/rclone.conf
     trans_read: unencrypt
     trans_write: encrypt
-  # Spotify Daemon
   f_spotifyd:
     src: .config/spotifyd/spotifyd.conf
     dst: ~/.config/spotifyd/spotifyd.conf
@@ -164,23 +134,22 @@ dotfiles:
   f_zlogout:
     src: .zlogout
     dst: ~/.zlogout
-    link: link
+    link: absolute
   f_zprofile:
     src: .zprofile
     dst: ~/.zprofile
-    link: link
+    link: absolute
     actions:
-      - install-zinit
+    - install-zinit
   f_zshrc:
     src: .zshrc
     dst: ~/.zshrc
     actions:
-      - install-zinit
+    - install-zinit
 #}}}
 
 # Profiles {{{
 profiles:
-  # Desktop
   terminator:
     dotfiles:
     - d_awesome
@@ -208,9 +177,7 @@ profiles:
     - f_zshrc
 
     variables:
-      colorscheme: "Mntns"
-
-  # Laptop
+      colorscheme: Mntns
   bigbrother:
     dotfiles:
     - d_awesome

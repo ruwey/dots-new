@@ -17,13 +17,15 @@ case $action in
 		dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
 		;;
 	"Suspend")
-		blurlock -s
+		slock &
+		sleep 3
+		sudo pm-suspend
 		;;
 	"Hibernate")
 		blurlock -h
 		;;
 	"Lock")
-		blurlock
+		slock
 		;;
 	"Blank Screen")
 		sleep 3

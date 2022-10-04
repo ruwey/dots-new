@@ -5,9 +5,9 @@
 binds:
   normal:
     <Ctrl+Shift+f>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
+    --username-target secret --dmenu-invocation ''bash -c "dmenu -i -l 5 -w $(xdotool getactivewindow)"'''
     <Ctrl+Shift+p>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --password-only --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
+    --username-target secret --password-only --dmenu-invocation ''bash -c "dmenu -i -l 5 -w $(xdotool getactivewindow)"'''
     <Ctrl+j>: tab-move -
     <Ctrl+k>: tab-move +
     <Ctrl+j>: tab-move +
@@ -25,19 +25,13 @@ binds:
     ",ta": config-cycle content.blocking.adblock.enabled
     ",tb": config-cycle tabs.show never always
     ",ts": config-cycle statusbar.show never always
-    ",ff": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret'
-    ",fp": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --password-only'
-    ",fu": 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --username-only'
     ",vo": spawn -u view_in_mpv
   insert:
     <Ctrl+e>: null
     <Ctrl+Shift+f>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
+    --username-target secret --dmenu-invocation ''bash -c "dmenu -i -l 5 -w $(xdotool getactivewindow)"'''
     <Ctrl+Shift+p>: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
-    --username-target secret --password-only --dmenu-invocation ''bash -c "dmenu -l 5 -w $(xdotool getactivewindow)"'''
+    --username-target secret --password-only --dmenu-invocation ''bash -c "dmenu -i -l 5 -w $(xdotool getactivewindow)"'''
     #<Ctrl+Shift+f>u: 'spawn -u qute-pass --username-pattern ''((?<=^user: ).*|(?<=login: ).*)''
     #--username-target secret --username-only'
 # }}}

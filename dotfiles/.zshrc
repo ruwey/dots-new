@@ -22,35 +22,36 @@ bindkey -v
 # Plugins {{{
 # Auto Add {{{
 ### Added by Zplugin's installer
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+zi_home="${HOME}/.zi"
+source "$zi_home/bin/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
 ### End of Zplugin's installer chunk
 # }}}
 
 # Prompt
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zi ice depth=1; zi light romkatv/powerlevel10k
 
 # For the selection menu when looking at autocomplete
-#zinit ice wait'!1'
-#zinit snippet OMZ::lib/completion.zsh
+#zi ice wait'!1'
+#zi snippet OMZ::lib/completion.zsh
 
 # Crasis menu
-zinit ice wait'!1'
-zinit light zdharma/zui
-zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
-zinit load zdharma/zinit-crasis
+zi ice wait'!1'
+zi light z-shell/zui
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
+zi light z-shell/zi-crasis
 
 # Fish like syntax highlighting
-zinit ice wait'!0'
-zinit light zdharma/fast-syntax-highlighting 
+zi ice wait'!0'
+zi light z-shell/fast-syntax-highlighting 
 
 # Fish like autosuggestions
-zinit ice wait'!1' atload"_zsh_autosuggest_start"
-zinit light zsh-users/zsh-autosuggestions
+zi ice wait'!1' atload"_zsh_autosuggest_start"
+zi light zsh-users/zsh-autosuggestions
 
 # Dynamic term title
-zinit light trystan2k/zsh-tab-title
+zi light trystan2k/zsh-tab-title
 # }}}
 
 # Configuration {{{ 
@@ -191,6 +192,23 @@ alias space="lsblk --output NAME,MOUNTPOINT,FSSIZE,FSUSED,FSUSE%"
 
 # Bluetoothctl
 alias btc="bluetoothctl"
+
+# HerbstluftWM shortcut
+alias hc="herbstclient"
+
+# 66 Commands w/ color
+alias 66-all="66-all -z"
+alias 66-dbctl="66-dbctl -z"
+alias 66-disable="66-disable -z"
+alias 66-enable="66-enable -z"
+alias 66-env="66-env -z"
+alias 66-init="66-init -z"
+alias 66-inresolve="66-inresolve -z"
+alias 66-inservice="66-inservice -z"
+alias 66-instate="66-instate -z"
+alias 66-intree="66-intree -z"
+alias 66-ns="66-ns -z"
+alias 66-
 # }}}
 
 # Directory Shortcuts {{{
@@ -205,3 +223,5 @@ hash -d -- atmt=/run/media/ruwey
 #}}}
 
 # vim:foldmethod=marker
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
